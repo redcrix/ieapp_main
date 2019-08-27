@@ -1,0 +1,81 @@
+<ion-content 
+[scrollEvents]="true"
+(ionScroll)="logScrolling($event)">
+<toolbar [back]="true" [title]="pageTitleName ? ('about.about' | translate) : ''"></toolbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1 class="title">{{ 'about.about' | translate }}</h1>
+      <div class="box-center-full box-logo-about">
+        <img *ngIf="_globalServ?.org == 'IE'" src="assets/img/about_ie.jpg">
+        <img *ngIf="_globalServ?.org == 'CEU'" src="assets/img/about_ceu.jpg">
+      </div>
+      <div class="mini-container">
+        <div class="title-desc-about">
+          <span *ngIf="_globalServ?.org == 'IE'">{{ 'about.aboutVIVEIE' | translate }}</span>
+          <span *ngIf="_globalServ?.org == 'CEU'">{{ 'about.aboutCEU' | translate }}</span>
+        </div>
+        <div class="desc-about">
+          {{ 'about.textAbout' | translate }}
+        </div>
+        <div class="box-policy-about" (click)="openPrivacyPolicy()">
+          <span class="policy-about">{{ 'about.checkThePrivacyPolicy' | translate }}</span> <span
+          class="fas fa-chevron-right policy-arrow"></span>
+        </div>
+        <div class="contact-about">
+          {{ 'about.contactUs' | translate }}
+        </div>
+        <div class="box-center-full">
+          <div (click)="openWebVistingo()" class="box-blue-circle">
+            <img width="48px" height="48px" src="assets/img/call.png">
+            <div class="blue-text">{{ 'city-guide-item.visitUs' | translate }}</div>
+          </div>
+          <div class="box-blue-circle">
+            <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"><img width="48px" height="48px" src="assets/img/call.png">
+              <div class="blue-text">{{ 'city-guide-item.emailUs' | translate }}</div>
+            </a>
+          </div>
+          <div class="box-blue-circle" (click)="callWithNumber()">
+            <img width="48px" height="48px" src="assets/img/call.png">
+            <div class="blue-text">{{ 'city-guide-item.callUs' | translate }}</div>
+          </div>
+        </div>
+        <div class="follow-about">
+          {{ 'about.followUs' | translate }}
+        </div>
+        <div class="box-center-full">
+          <div class="box-blue-circle">
+            <img width="48px" height="48px" src="assets/img/facebook.png">
+            <div class="blue-text">{{ 'city-guide-item.website' | translate }}</div>
+          </div>
+          <div class="box-blue-circle">
+            <img width="48px" height="48px" src="assets/img/facebook.png">
+            <div class="denim-blue">{{ 'city-guide-item.facebook' | translate }}</div>
+          </div>
+          <div class="box-blue-circle">
+            <img width="48px" height="48px" src="assets/img/instagram.png">
+            <div class="text-insta">{{ 'city-guide-item.instagram' | translate }}</div>
+          </div>
+        </div>
+        <div class="box-center-full">
+          <div class="box-blue-circle">
+            <img width="48px" height="48px" src="assets/img/twitter.png">
+            <div class="blue-text">{{ 'city-guide-item.twitter' | translate }}</div>
+          </div>
+          <div class="box-blue-circle">
+            <img width="48px" height="48px" src="assets/img/youtube.png">
+            <div class="text-red">{{ 'city-guide-item.youtube' | translate }}</div>
+          </div>
+          <div class="box-blue-circle">
+            <img width="48px" height="48px" src="assets/img/linked-in.png">
+            <div class="text-linked">{{ 'city-guide-item.linkedin' | translate }}</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+</ion-content>

@@ -1,0 +1,102 @@
+<ion-content>
+  <toolbar title="{{ 'filters.filters' | translate }}" [back]="true" [reset]="true"  (resetEmit)="resetFilter($event)"></toolbar>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="filter-top"></div>
+
+        <div class="filter-by">
+          {{ 'filters.sortBy' | translate }}
+        </div>
+        <ng-scrollbar [trackX]="true" [trackY]="false">
+          <div class="scroll-content">
+            <div *ngFor="let item of listSortBy">
+              <ion-chip *ngIf="item?.checked == null" (click)="activeSortBy(item)" class="chip-pasive" color="primary">
+                <ion-label *ngIf="_globalServ.language == 'en'">{{item?.option_en}}</ion-label>
+                <ion-label *ngIf="_globalServ.language == 'es'">{{item?.option_es}}</ion-label>
+              </ion-chip>
+              <ion-chip *ngIf="item?.checked == true" (click)="desactiveSortBy(item)" class="chip-active"
+                color="primary">
+                <ion-label *ngIf="_globalServ.language == 'en'">{{item?.option_en}}</ion-label>
+                <ion-label *ngIf="_globalServ.language == 'es'">{{item?.option_es}}</ion-label>
+              </ion-chip>
+            </div>
+          </div>
+        </ng-scrollbar>
+
+        <div class="filter-by">
+          {{ 'filters.typeOfFeed' | translate }}
+        </div>
+        <ng-scrollbar [trackX]="true" [trackY]="false">
+          <div class="scroll-content">
+            <div *ngFor="let item of listTypeOfFeed">
+              <ion-chip *ngIf="item.checked == null" (click)="activeTypeOfFeed(item)" class="chip-pasive"
+                color="primary">
+                <ion-label *ngIf="_globalServ.language == 'en'">{{item?.option_en}}</ion-label>
+                <ion-label *ngIf="_globalServ.language == 'es'">{{item?.option_es}}</ion-label>
+              </ion-chip>
+              <ion-chip *ngIf="item.checked == true" (click)="desactiveTypeOfFeed(item)" class="chip-active"
+                color="primary">
+                <ion-label *ngIf="_globalServ.language == 'en'">{{item?.option_en}}</ion-label>
+                <ion-label *ngIf="_globalServ.language == 'es'">{{item?.option_es}}</ion-label>
+              </ion-chip>
+            </div>
+          </div>
+        </ng-scrollbar>
+
+        <div class="filter-by">
+          {{ 'filters.date' | translate }}
+        </div>
+        <ng-scrollbar [trackX]="true" [trackY]="false">
+          <div class="scroll-content">
+            <div *ngFor="let item of listDate">
+              <ion-chip *ngIf="item?.checked == null" (click)="activeDate(item)" class="chip-pasive chip-all"
+                color="primary">
+                <ion-label *ngIf="_globalServ.language == 'en'">{{item?.option_en}}</ion-label>
+                <ion-label *ngIf="_globalServ.language == 'es'">{{item?.option_es}}</ion-label>
+              </ion-chip>
+              <ion-chip *ngIf="item?.checked == true" (click)="desactiveDate(item)" class="chip-active chip-all"
+                color="primary">
+                <ion-label *ngIf="_globalServ.language == 'en'">{{item?.option_en}}</ion-label>
+                <ion-label *ngIf="_globalServ.language == 'es'">{{item?.option_es}}</ion-label>
+              </ion-chip>
+            </div>
+          </div>
+        </ng-scrollbar>
+
+        <div class="filter-by">
+          {{ 'filters.city' | translate }}
+        </div>
+        <ng-scrollbar [trackX]="true" [trackY]="false">
+          <div class="scroll-content">
+            <div *ngFor="let item of listCity">
+              <ion-chip *ngIf="item?.checked == null" (click)="activeCity(item)" class="chip-pasive" color="primary">
+                <ion-label *ngIf="_globalServ.language == 'en'">{{item?.option_en}}</ion-label>
+                <ion-label *ngIf="_globalServ.language == 'es'">{{item?.option_es}}</ion-label>
+              </ion-chip>
+              <ion-chip *ngIf="item?.checked == true" (click)="desactiveCity(item)" class="chip-active" color="primary">
+                <ion-label *ngIf="_globalServ.language == 'en'">{{item?.option_en}}</ion-label>
+                <ion-label *ngIf="_globalServ.language == 'es'">{{item?.option_es}}</ion-label>
+              </ion-chip>
+            </div>
+
+            <!--<ion-chip class="chip-active" color="primary">
+              <ion-label>{{ 'filters.segovia' | translate }}</ion-label>
+            </ion-chip>-->
+          </div>
+        </ng-scrollbar>
+
+        <ion-row (click)="goToPreferences()">
+          <ion-col class="preferences" size="10">{{ 'filters.preferences' | translate }}</ion-col>
+          <ion-col style="font-size: 17pt;text-align: right;" class="secondary-text" size="2"><span
+              class="fas fa-chevron-right"></span></ion-col>
+        </ion-row>
+        <div class="box-center-full box-btn">
+          <ion-button (click)="saveFilters()" class="button-one" shape="round">{{ 'filters.showResults' | translate }}</ion-button>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

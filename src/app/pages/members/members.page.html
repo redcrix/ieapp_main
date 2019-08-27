@@ -1,0 +1,23 @@
+<ion-content>
+  <toolbar
+    [title]="'Members'"
+    [cancelMembers]="true"
+    [inviteMembers]="true"
+    [searchMembers]="true"
+    (memberKeyChange)="memberKeyChange($event)"
+    (inviteMemberEvent)="inviteMemberEvent($event)"
+  >
+  </toolbar>
+  <div class="container member-screen">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="member" [ngClass]="{'selected': isSelected(member)}" *ngFor="let member of groupMembers | filter:keyword; let i=index" (click)="selectPeople(member)" >
+          <img class="member-avatar" src="{{member.image}}" />
+          <span class="member-name">{{member.name}}</span>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

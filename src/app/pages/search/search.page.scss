@@ -1,0 +1,68 @@
+.searchbar {
+    --cancel-button-color: rgb(240, 65, 65);
+}
+
+
+.title-search{
+    color: rgb(34, 36, 40);
+    font-size: 14pt;
+    margin-top: 22pt;
+    font-weight: 500;
+    margin-bottom: 28pt;
+}
+
+.box-search-item{
+    margin-top: -15pt;
+    margin-left: -15px;
+}
+
+.toggle-hide-all {
+    text-align: center;
+    & span {
+        font-weight: bold;
+    }
+}
+
+.row-search-recent{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    font-size: 30pt;
+    color: rgb(216, 216, 216);
+}
+
+.row-back{
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+    font-size: 21pt;
+    color: black;
+}
+
+.hr-search{
+    width: 1500px !important;
+    background: rgb(224, 224, 224) !important;
+    display: block !important;
+    margin-left: -400px; 
+    visibility: visible !important;
+}
+
+ng-scrollbar{
+    max-height: 80px;
+    margin-left: -4px;
+}
+
+.scroll-content{
+    display:flex;
+}
+
+ion-chip{
+    display: inline-table !important;
+    white-space: nowrap !important;
+    font-size: 14pt;
+    //min-width: 200px;
+}
+
+ion-toolbar{
+    margin-top: 25pt;
+}

@@ -1,0 +1,28 @@
+<ion-content>
+  <toolbar *ngIf="modalType == null" title="{{ 'language-list.language' | translate }}" [back]="true"></toolbar>
+  <toolbar *ngIf="modalType == true" title="{{ 'language-list.language' | translate }}" [cancel]="true"></toolbar>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <form>
+          <ion-list lines="none">
+            <ion-item (click)="selectEnglish($event)">
+              <ion-label>{{ 'language-list.english' | translate }}</ion-label>
+              <ion-radio [checked]="english" slot="end"></ion-radio>
+            </ion-item>
+            <ion-item (click)="selectSpanish($event)">
+              <ion-label>{{ 'language-list.spanish' | translate }}</ion-label>
+              <ion-radio [checked]="spanish" slot="end"></ion-radio>
+            </ion-item>
+          </ion-list>
+          <div class="box-center-full btn-float-one">
+            <ion-button (click)="selectlanguage()" class="button-one" shape="round">
+              {{ 'language-list.select' | translate }}</ion-button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

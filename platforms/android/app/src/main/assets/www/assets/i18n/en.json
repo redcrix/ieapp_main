@@ -1,0 +1,322 @@
+{
+    "login": {
+        "username": "Username",
+        "password": "Password",
+        "required": "Required",
+        "title365": "or connect with:",
+        "nonExistentUser": "Non existent user"
+    },
+    "profile": {
+        "profile": "Profile",
+        "setting": "Settings",
+        "name": "Name",
+        "lastName": "Last Name",
+        "city": "City",
+        "faculty": "Faculty",
+        "from": "From",
+        "birthday": "Birthday",
+        "emailAddress": "Email address",
+        "language": "Language",
+        "instagram": "Instagram",
+        "connect": "Connect",
+        "continue": "Continue",
+        "english": "English",
+        "spanish": "Spanish",
+        "joined": "Joined",
+        "preferences": "Preferences",
+        "permissions": "Permissions",
+        "changePassword": "Change password",
+        "save": "Save"
+    },
+    "preferences": {
+        "preferences": "Preferences",
+        "explanation": "Choose what kind of information you'd like to recive on your personal Dashboard. You can edit those information later in your profile.",
+        "saveAndContinue": "Save & Continue",
+        "save": "Save"
+    },
+    "preferences-ok": {
+        "congrats": "Congrats! You're all set",
+        "continue": "Continue"
+    },
+    "filters": {
+        "filters": "Filters",
+        "sortBy": "Sort by",
+        "preferences": "Preferences",
+        "newest": "Newest",
+        "mostPopular": "Most popular",
+        "typeOfFeed": "Type of feed",
+        "all": "All",
+        "clubEvents": "Club events",
+        "studentPlans": "Student plans",
+        "groupPlans": "Group plans",
+        "date": "Date",
+        "today": "Today",
+        "tomorrow": "Tomorrow",
+        "thisWeek": "This week",
+        "custom": "Custom",
+        "city": "City",
+        "madrid": "Madrid",
+        "segovia": "Segovia",
+        "showResults": "Show results"
+    },
+    "city-guide-list": {
+        "cityGuide": "City Guide"
+    },
+    "city-guide-item": {
+        "Website": "Website",
+        "Call": "Call",
+        "Directions": "Directions",
+        "createPlan": "Create plan",
+        "details": "Details",
+        "readMore": "Read more",
+        "openingHours": "Opening hours",
+        "location": "Location",
+        "howToGetThere": "How to get there",
+        "share": "Share",
+        "bus": "Bus",
+        "metro": "Metro",
+        "website":"Website",
+        "facebook":"Facebook",
+        "instagram":"Instagram",
+        "twitter":"Twitter",
+        "youtube":"YouTube",
+        "linkedin":"LinkedIn",
+        "callUs":"Call Us",
+        "emailUs":"Email Us",
+        "visitUs":"Visit Us"
+    },
+    "city-agenda-list": {
+        "cityAgenda": "City Agenda"
+    },
+    "city-agenda-item": {
+        "createPlan": "Create plan",
+        "details": "Details",
+        "readMore": "Read more",
+        "dateAndTime": "Date & time",
+        "addToCalendar": "Add to Calendar",
+        "addedToCalendar": "Add to Calendar",
+        "location": "Location",
+        "website": "Website",
+        "directions": "Directions",
+        "price": "Price",
+        "share": "Share"
+    },
+    "offers-discounts-list": {
+        "offersAndDiscounts": "Offer & Discounts"
+    },
+    "plan-list": {
+        "plans": "Plans",
+        "recommended": "Recommended",
+        "viewMyPlans": "View my plans"
+    },
+    "plan-item": {
+        "joined": "Joined",
+        "join": "Join",
+        "details": "Details",
+        "readMore": "Read more",
+        "createBy": "Created by",
+        "going": "Going",
+        "dateAndTime": "Date & time",
+        "addToCalendar": "Add to Calendar",
+        "addedToCalendar": "Added to Calendar",
+        "location": "Location",
+        "website": "Website",
+        "directions": "Directions",
+        "price": "Price",
+        "share": "Share",
+        "email": "Email"
+    },
+    "image-cropper": {
+        "moveAndScale": "Move and scale",
+        "cancel": "Cancel",
+        "save": "Save"
+    },
+    "language-list": {
+        "language":"Language",
+        "english": "English",
+        "spanish": "Spanish",
+        "save": "Save",
+        "select": "Select"
+    },
+    "toolbar": {
+        "cancel":"Cancel",
+        "reset": "Reset",
+        "invite": "Invite"
+    },
+    "more": {
+        "more":"More",
+        "viewProfile": "View Profile",
+        "clubs": "Clubs",
+        "groups": "Groups",
+        "settings": "Settings",
+        "about": "About",
+        "logOut": "Log out"
+    },
+    "view-profile": {
+        "preferences":"Preferences",
+        "clubs": "Clubs",
+        "groups": "Groups",
+        "email": "Email",
+        "instagram": "Instagram",
+        "personalInformation": "Personal information",
+        "from": "From",
+        "birthdayOn": "Birthday on",
+        "planAndEvents": "Plan & events",
+        "plans": "Plans",
+        "viewAll": "View all"
+    },
+    "offers-discounts-item": {
+        "Website": "Website",
+        "Call": "Call",
+        "Directions": "Directions",
+        "details": "Details",
+        "readMore": "Read more",
+        "validUntil": "Valid until",
+        "price": "Price",
+        "openingHours": "Opening hours",
+        "location": "Location",
+        "howToGetThere": "How to get there",
+        "share": "Share"
+    },
+    "plan-card": {
+        "peopleGoing": "people going"
+    },
+    "search": {
+        "all": "All",
+        "people": "People",
+        "studentPlan": "Student plan",
+        "events": "Events",
+        "offersAndDiscount": "Offers & Discount",
+        "recentSearches": "RECENT SEARCHES",
+        "peopleCL": "PEOPLE",
+        "studentPlans": "STUDENT PLANS",
+        "eventsCL": "EVENTS",
+        "offersAndDiscountCL": "OFFERS & DISCOUNT"
+    },
+    "notifications": {
+        "notifications": "Notifications",
+        "todayCL": "TODAY",
+        "thisWeekCL": "THIS WEEK",
+        "thisMonthCL": "THIS MONTH"
+    },
+    "plan-create": {
+        "createaPlan": "Create a plan",
+        "createBy": "Created by",
+        "planDate": "Plan date",
+        "limitDate": "Limit date",
+        "noLimitDate": "No limit date",
+        "category": "Category",
+        "avalibleSeats": "Available seats",
+        "noLimits": "No limits",
+        "plublishThePlan": "Publish the plan",
+        "pick": "Pick",
+        "title": "Title",
+        "location": "Location",
+        "details": "Details",
+        "groupGroupPlan": "Group (Group Plan)"
+    },
+    "about": {
+        "about": "About",
+        "aboutVIVEIE": "About VIVE IE",
+        "aboutCEU": "About CEU",
+        "textAbout": "VIVE provides students an environment to interact, connect and interrelate. That supports the participation and integration of students at the university and encourages coexistence among them as it brings satisfaction and growing sense of belonging.Promoting more positive and supportive relationship among the members of the university.The best support for  students , becoming the best ambassador of the city and facilitating the integration of the student in the first months.",
+        "checkThePrivacyPolicy": "Check the Privacy Policy",
+        "contactUs": "Contact Us",
+        "followUs": "Follow Us"
+    },
+    "club-detail": {
+        "details": "Details",
+        "members": "Members",
+        "createdBy": "Created by",
+        "plans": "Plans",
+        "readMore": "Read more",
+        "join": "Join",
+        "joined": "Joined"
+    },
+    "group-detail": {
+        "details": "Details",
+        "members": "Members",
+        "comments": "Comments",
+        "plans": "Plans",
+        "readMore": "Read more",
+        "joined": "Joined",
+        "join": "Join",
+        "createPlan": "Create a Plan",
+        "addAComment": "Add a comment",
+        "invite": "Invite",
+        "cancel": "Cancel"
+    },
+    "group-create": {
+        "createaGroup": "Create a group",
+        "category": "Category",
+        "settings": "Settings",
+        "membersCanCreatePlan": "Members can create a plan",
+        "invitePeople": "Invite people",
+        "invite": "Invite",
+        "pick": "Pick",
+        "title": "Title",
+        "details": "Details",
+        "createTheGroup": "Create the group"
+    },
+    "group-create-category": {
+        "pickup3": "Pick up to 3 categories",
+        "category": "Category"
+    },
+    "group-create-settings": {
+        "settings": "Settings",
+        "memberCanCreate": "Members can create a plan",
+        "memberCannotCreate": "Members cannot create a plan",
+        "setting3": "Settings 3"
+    },
+    "group-create-invite": {
+        "invite": "Invite",
+        "searchPeople": "Search people"
+    },
+    "group-create-success": {
+        "continue": "Continue",
+        "successMsg": "Your group has successfully been created"
+    },
+    "groups": {
+        "groups": "Groups",
+        "recommendedGroups": "Recommended groups",
+        "viewAll": "View all",
+        "hideAll": "Hide all",
+        "noGroups": "No groups",
+        "yourGroups": "Your groups"
+    },
+    "write-comment": {
+        "writeAComment": "Write a comment",
+        "send": "Send"
+    },
+    "joined": {
+        "studentPlans": "Student plans",
+        "groupPlans": "Group plans",
+        "clubs": "Clubs", 
+        "groups": "Groups",
+        "viewAllGroups": "View all groups",
+        "viewAllGroupPlan": "View all group plans"
+    },
+    "clubs": {
+        "clubs": "Clubs",
+        "recommendedClubs": "Recommended clubs",
+        "hideAll": "Hide all",
+        "viewAll": "View all",
+        "noClubs": "No clubs",
+        "yourClubs": "Your clubs"
+    },
+    "group-plan-item": {
+        "details": "Details",
+        "readMore": "Read more",
+        "join": "Join",
+        "joined": "Joined",
+        "createdBy": "Created by",
+        "going": "Going",
+        "date": "Date",
+        "addToCalendar": "Add to Calendar",
+        "location": "Location"
+    },
+    "plan-create-success": {
+        "continue": "Continue",
+        "successMsg": "Your plan has successfully been created"
+    }
+}

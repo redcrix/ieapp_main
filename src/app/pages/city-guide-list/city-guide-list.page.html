@@ -1,0 +1,34 @@
+<ion-content 
+[scrollEvents]="true"
+(ionScroll)="logScrolling($event)">
+<toolbar [setting]="true" [title]="pageTitleName ? ('city-guide-list.cityGuide' | translate) : ''"></toolbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1 class="title">{{ 'city-guide-list.cityGuide' | translate }}</h1>
+      <div class="box-container">
+
+        <div *ngIf="!_globalServ?.listCityGuide?.categories" class="spinner-div">
+          <ion-spinner name="lines"></ion-spinner>
+        </div>
+        <div *ngIf="_globalServ?.listCityGuide?.categories">
+          <div *ngFor="let item of _globalServ?.listCityGuide?.categories" (click)="goToCityGuideItemList(item)" class="item">
+            <ion-card>
+              <img class="cg-card-image" src="{{item?.image}}">
+            </ion-card>
+            <div
+            style="display: -webkit-box;max-width: 100%;line-height: 1;-webkit-box-orient: vertical;text-overflow: ellipsis;font-weight: 400"
+            class="box-center-full">
+            <span *ngIf="_globalServ?.language == 'en'">{{item?.name_EN}}</span>
+            <span *ngIf="_globalServ?.language == 'es'">{{item?.name_ES}}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+</div>
+</ion-content>

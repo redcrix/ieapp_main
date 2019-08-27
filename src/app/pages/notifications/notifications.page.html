@@ -1,0 +1,93 @@
+<ion-content>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <h1 class="title">{{ 'notifications.notifications' | translate }}</h1>
+
+        <!--TODAY-->
+        <div class="title-noti">
+          {{ 'notifications.todayCL' | translate }}
+        </div>
+        <div class="box-noti-item">
+          <div *ngFor="let todayNotification of notifications; let i=index">
+            <ion-row *ngIf="todayNotification.date_group === 'TODAY'">
+              <ion-col size="10">
+                <ion-item lines="none">
+                  <ion-avatar slot="start">
+                    <img src="{{todayNotification.author_image}}">
+                  </ion-avatar>
+                  <ion-label>
+                    <h2 class="noti-one">{{todayNotification.message}}</h2>
+                    <p class="noti-two">{{getDuration(todayNotification.created)}}</p>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col class="column-center" size="2">
+                <div class="row-noti-recent">
+                  <ion-icon name="ios-close" (click)="readNotification(todayNotification)"></ion-icon>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+        <hr class="hr-noti">
+        <!--THIS WEEK-->
+        <div class="title-noti">
+          {{ 'notifications.thisWeekCL' | translate }}
+        </div>
+        <div class="box-noti-item">
+          <div *ngFor="let weekNotification of notifications; let i=index">
+            <ion-row *ngIf="weekNotification.date_group === 'THIS WEEK'">
+              <ion-col size="10">
+                <ion-item lines="none">
+                  <ion-avatar slot="start">
+                    <img src="{{weekNotification.author_image}}">
+                  </ion-avatar>
+                  <ion-label>
+                    <h2 class="noti-one">{{weekNotification.message}}</h2>
+                    <p class="noti-two">{{getDuration(weekNotification.created)}}</p>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col class="column-center" size="2">
+                <div class="row-noti-recent">
+                  <ion-icon name="ios-close" (click)="readNotification(weekNotification)"></ion-icon>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+        <hr class="hr-noti">
+        <!--THIS MONTH-->
+        <div class="title-noti">
+          {{ 'notifications.thisMonthCL' | translate }}
+        </div>
+        <div class="box-noti-item">
+          <div *ngFor="let monthNotification of notifications; let i=index">
+            <ion-row *ngIf="monthNotification.date_group === 'THIS MONTH'">
+              <ion-col size="10">
+                <ion-item lines="none">
+                  <ion-avatar slot="start">
+                    <img src="{{monthNotification.author_image}}">
+                  </ion-avatar>
+                  <ion-label>
+                    <h2 class="noti-one">{{monthNotification.message}}</h2>
+                    <p class="noti-two">{{getDuration(monthNotification.created)}}</p>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col class="column-center" size="2">
+                <div class="row-noti-recent">
+                  <ion-icon name="ios-close" (click)="readNotification(monthNotification)"></ion-icon>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+        <div class="margin-bottom"></div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

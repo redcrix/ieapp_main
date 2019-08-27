@@ -1,0 +1,87 @@
+<ion-content 
+[scrollEvents]="true"
+(ionScroll)="logScrolling($event)">
+<toolbar [back]="true" [title]="pageTitleName ? ('plan-create.createaPlan' | translate) : ''"></toolbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1 class="title">{{ 'plan-create.createaPlan' | translate }}</h1>
+      <hr class="hr-pc pc-margin-top">
+      <div *ngIf="_globalServ.planImagePath == null" (click)="goToselectImage()" class="box-center-full">
+        <span [ngClass]="{'circle-req':_globalServ.planImagePost == null && post == true}" class="circle">
+          <span class="icon fas fa-camera"></span>
+        </span>
+      </div>
+      <img class="image-plan" (click)="goToselectImage()" *ngIf="_globalServ.planImagePath != null" [src]="_globalServ.planImagePath">
+      <hr class="hr-pc">
+
+      <form>
+
+        <ion-item-divider mode="md"></ion-item-divider>
+        <ion-item-divider mode="md">
+          <ion-label class="req" *ngIf="title == '' && post == true">*</ion-label>
+          <ion-input [(ngModel)]="title" [formControl]="myForm.get('title')" placeholder="{{ 'plan-create.title' | translate }}"></ion-input>
+        </ion-item-divider>
+        <ion-item-divider mode="md">
+          <ion-label class="req" *ngIf="location == '' && post == true">*</ion-label>
+          <ion-input [(ngModel)]="location" [formControl]="myForm.get('location')" placeholder="{{ 'plan-create.location' | translate }}"></ion-input>
+        </ion-item-divider>
+
+        <hr class="hr-pc">
+        <ion-item (click)="getPlanCreatedBy()" lines="none">
+          <label style="font-size: 17pt;" position="fixed">{{ 'plan-create.createBy' | translate }}</label>
+          <span slot="end" style="font-size: 17pt;" class="secondary-text">
+            {{ 'plan-create.pick' | translate }} <span class="fas fa-chevron-right"></span>
+          </span>
+        </ion-item>
+
+        <ion-item (click)="getPlanDate()" lines="none">
+          <label style="font-size: 17pt;" position="fixed"><span class="req" *ngIf="planDate == null && post == true">*</span> {{ 'plan-create.planDate' | translate }}</label>
+          <span slot="end" style="font-size: 17pt;" class="secondary-text">
+           <span *ngIf="planDate == null">{{ 'plan-create.pick' | translate }}</span><span *ngIf="planDate != null">{{planDate | date:'MM/dd/yy'}}</span> <span class="fas fa-chevron-right"></span>
+         </span>
+       </ion-item>
+
+       <ion-item (click)="getLimitDate()" lines="none">
+        <label style="font-size: 17pt;" position="fixed">{{ 'plan-create.limitDate' | translate }}</label>
+        <span slot="end" style="font-size: 17pt;" class="secondary-text">
+          {{ 'plan-create.noLimitDate' | translate }} <span class="fas fa-chevron-right"></span>
+        </span>
+      </ion-item>
+
+      <ion-item (click)="getSupercategory()" lines="none">
+        <label style="font-size: 17pt;" position="fixed"><span class="req" *ngIf="okIdsCategories == false">*</span> {{ 'plan-create.category' | translate }}</label>
+        <span slot="end" style="font-size: 17pt;" class="secondary-text">
+          {{ 'plan-create.pick' | translate }} <span class="fas fa-chevron-right"></span>
+        </span>
+      </ion-item>
+
+      <ion-item (click)="getavalibleSeats()" lines="none">
+        <label style="font-size: 17pt;" position="fixed">{{ 'plan-create.avalibleSeats' | translate }}</label>
+        <span *ngIf="avalibleSeats === -1" slot="end" style="font-size: 17pt;" class="secondary-text">
+          {{ 'plan-create.noLimits' | translate }} <span class="fas fa-chevron-right"></span>
+        </span>
+        <span *ngIf="avalibleSeats !== -1" slot="end" style="font-size: 17pt;" class="secondary-text">
+          {{ avalibleSeats }} <span class="fas fa-chevron-right"></span>
+        </span>
+      </ion-item>
+
+      <hr class="hr-pc">
+      <span class="req" *ngIf="details == '' && post == true">*</span>
+      <ion-textarea [(ngModel)]="details" [formControl]="myForm.get('details')" placeholder="{{ 'plan-create.details' | translate }}"></ion-textarea>
+      <hr class="hr-pc">
+
+      <div class="box-center-full btn-pc-box">
+        <ion-button (click)="save(myForm.value)" class="button-one" shape="round">
+          <span>{{ 'plan-create.plublishThePlan' | translate }}</span>
+        </ion-button>
+      </div>
+
+    </form>
+
+  </div>
+  <div class="col-md-2"></div>
+</div>
+</div>
+</ion-content>

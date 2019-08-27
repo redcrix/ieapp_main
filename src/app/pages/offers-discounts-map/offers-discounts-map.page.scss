@@ -1,0 +1,64 @@
+.map{
+    background: white;
+    height: 100%;
+}
+
+.line-bottom-drawer{
+    height: 4pt;
+    background: #cecece;
+    border-radius: 15px;
+    margin-top: 10px; 
+    width: 32pt;
+    display: inline-block;
+}
+
+ng-scrollbar{
+    max-height: 90px;
+}
+
+.drawer{
+    border-radius: 35px;
+    border: 12px solid white;
+}
+
+.image-card-odm{
+    //width: 108pt;
+    height: 96pt;
+    object-fit: cover;
+}
+
+
+.odm-avatar{
+    font-size: 12pt;
+    font-weight: 600;
+}
+
+.odm-icon{
+    font-size: 15pt;
+}
+
+.more-icon{
+    font-size:18pt;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.more-item-text{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16pt;
+    margin-left: 10px;
+}
+
+.more-box-icon-text{
+    width: fit-content;
+}
+
+.button-two{
+    margin-left: 7px;
+}
+
+.btn-back-item{
+    color: black;
+    text-shadow: none;
+}

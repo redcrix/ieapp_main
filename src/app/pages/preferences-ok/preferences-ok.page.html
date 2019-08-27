@@ -1,0 +1,20 @@
+<ion-content>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="box-center-full box-img">
+          <img width="90px" height="90px" src="assets/img/ok-2.png">
+          <div class="box-congrats">
+            {{ 'preferences-ok.congrats' | translate }}
+          </div>
+        </div>
+
+        <div class="box-center-full btn-float-one">
+          <ion-button (click)="goToPlans()" class="button-one" shape="round">{{ 'preferences-ok.continue' | translate }}</ion-button>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

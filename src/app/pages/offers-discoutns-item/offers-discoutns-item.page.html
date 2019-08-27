@@ -1,0 +1,199 @@
+<ion-content>
+  <div class="btn-back-content-item" [ngClass]="{'btn-back-content-item-ios':_globalServ?.iosDivice}">
+    <span (click)="goBack()" class="btn-back-item fas fa-chevron-left"></span>
+  </div>
+  <div>
+    <img class="main-item-image" src="{{item?.image}}">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+
+        <div class="item-title">
+          <h2>{{item?.title}}</h2>
+        </div>
+
+        <div class="box-center-full">
+          <div class="box-blue-circle">
+            <span class="blue-circle icon-blue fas fa-globe"></span>
+            <div class="blue-text">{{ 'offers-discounts-item.Website' | translate }}</div>
+          </div>
+          <div class="box-blue-circle">
+            <span class="blue-circle icon-blue fas fa-phone"></span>
+            <div class="blue-text">{{ 'offers-discounts-item.Call' | translate }}</div>
+          </div>
+          <div class="box-blue-circle">
+            <span class="blue-circle icon-blue fas fa-location-arrow"></span>
+            <div class="blue-text">{{ 'offers-discounts-item.Directions' | translate }}</div>
+          </div>
+        </div>
+
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="information-circle"></ion-icon>
+            </td>
+            
+            <td class="title-item">{{ 'offers-discounts-item.details' | translate }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="secondary-text">{{item?.description }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="blue-text size-18-pt">{{ 'offers-discounts-item.readMore' | translate }}</td>
+          </tr>
+        </table>
+
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="md-calendar"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'offers-discounts-item.validUntil' | translate }}</td>
+          </tr>
+          <tr class="secondary-text">
+            <td></td>
+            <td>{{item?.validUntil | date:'d MMMM  y'}}</td>
+          </tr>
+          <tr>
+        </table>
+
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="ios-pricetag"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'offers-discounts-item.price' | translate }}</td>
+          </tr>
+          <tr class="secondary-text">
+            <td></td>
+            <td>{{item?.price | currency:'EUR':true:'1.2-2'}}</td>
+          </tr>
+          <tr>
+        </table>
+
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="clock"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'offers-discounts-item.openingHours' | translate }}</td>
+          </tr>
+          <tr class="secondary-text weight-600">
+            <td></td>
+            <!-- <td>{{item?.openingHours}}</td> -->
+          </tr>
+          <tr>
+            <!--
+ <tr class="secondary-text">
+            <td></td>
+            <td>10:00 - 11:00</td>
+          </tr>
+            -->
+         
+          <!--<tr class="secondary-text weight-600">
+            <td></td>
+            <td>Sunday</td>
+          </tr>
+          <tr class="secondary-text">
+            <td></td>
+            <td>Closed</td>
+          </tr>-->
+        </table>
+
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="pin"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'offers-discounts-item.location' | translate }}</td>
+          </tr>
+          <tr class="secondary-text">
+            <td></td>
+            <td>{{item?.address}}</td>
+          </tr>
+          <tr>
+          <!--<tr class="secondary-text">
+            <td></td>
+            <td>Calle abc 45</td>
+          </tr>
+          <tr class="secondary-text">
+            <td></td>
+            <td>ABC</td>
+          </tr>
+          <tr>-->
+            <td></td>
+            <td>
+              <ion-chip class="btn-blue-general">
+                <ion-label>{{ 'offers-discounts-item.Website' | translate }}</ion-label>
+              </ion-chip>
+            </td>
+          </tr>
+        </table>
+
+        <div class="box-map-one">
+          <div id="map" class="map-one" #map></div>
+        </div>
+
+        <!--
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="ios-bus"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'offers-discounts-item.howToGetThere' | translate }}</td>
+          </tr>
+          <tr class="secondary-text weight-600">
+            <td></td>
+            <td>Bus</td>
+          </tr>
+          <tr class="secondary-text">
+            <td></td>
+            <td>21 , 74</td>
+          </tr>
+          <tr class="secondary-text weight-600">
+            <td></td>
+            <td>Metro</td>
+          </tr>
+          <tr class="secondary-text">
+            <td></td>
+            <td>21 , 74</td>
+          </tr>
+        </table>
+      -->
+
+        <table class="margin-last-table">
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="ios-share"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'offers-discounts-item.share' | translate }}</td>
+          </tr>
+          <tr class="secondary-text">
+            <td></td>
+            <td>
+              <ion-chip class="btn-facebook">
+                <ion-label>Facebook</ion-label>
+              </ion-chip>
+              <ion-chip class="btn-twitter">
+                <ion-label>Twitter</ion-label>
+              </ion-chip>
+              <ion-chip class="btn-email">
+                <ion-label>Email</ion-label>
+              </ion-chip>
+              <ion-chip class="btn-whatsapp">
+                <ion-label>WhatsApp</ion-label>
+              </ion-chip>
+            </td>
+          </tr>
+          <tr>
+        </table>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

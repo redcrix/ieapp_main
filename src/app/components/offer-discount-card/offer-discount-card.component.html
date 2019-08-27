@@ -1,0 +1,17 @@
+<ion-card (click)="goToOfferDiscountItem()">
+  <img class="od-card-image" src="{{dataOffDisc?.image}}">
+  <ion-card-header>
+    <ion-card-subtitle>
+      <div style="align-items: center;display: flex">
+        <ion-avatar style="min-width: 35px;min-height:35px;max-width: 35px;max-height:35px">
+          <img src="{{dataOffDisc?.image}}">
+        </ion-avatar>
+        <ion-label style="text-align: left;display: -webkit-box;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;margin-left: 15px;color:black" class="weight-600">
+            {{dataOffDisc?.title}}
+        </ion-label>
+      </div>
+    </ion-card-subtitle>
+    <ion-card-title style=" text-align: left;display: -webkit-box;max-width: 100%;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis; font-size: 12px; color: black; font-weight: 600;">
+    {{dataOffDisc?.description | slice:0:200}}<span>...Read more</span></ion-card-title>
+  </ion-card-header>
+</ion-card>

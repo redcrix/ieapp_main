@@ -1,0 +1,44 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="search">
+      <div class="bg-background search-tab icon-tab"></div>
+      <ion-label></ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="notifications">
+      <div class="bg-background bell-tab icon-tab"></div>
+      <ion-label></ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="">
+    </ion-tab-button>
+    <ion-tab-button (click)="showMore()">
+      <div class="bg-background plus-tab icon-tab"></div>
+      <ion-label></ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="more">
+      <div class="bg-background menu-tab icon-tab"></div>
+      <ion-label></ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>
+
+<ion-fab vertical="bottom" horizontal="center" [ngClass]="{'ios-fab':_globalServ?.iosDivice,'android-fab':_globalServ?.androidDivice}" slot="fixed">
+  <ion-fab-button>
+    <div style="font-size: 25px;" class="far fa-dot-circle"></div>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button (click)="goToOffersAndDiscount()" class="offer-discount">
+      <ion-icon name="md-pricetags"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="goToCityAgenda()" class="city-agenda">
+      <div class="fas fa-copy"></div>
+    </ion-fab-button>
+    <ion-fab-button (click)="goToCityGuide()" class="city-guide">
+      <ion-icon name="ios-map"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="goToPlanList()" tab="plan-list" class="plan-list">
+      <div class="far fa-calendar"></div>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>

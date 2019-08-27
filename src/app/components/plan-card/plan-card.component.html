@@ -1,0 +1,74 @@
+<ion-card>
+  <img class="pc-card-image" *ngIf="dataPlan?.type !== 'club_plan'" (click)="goToItemPlan()" src="{{dataPlan?.image}}">
+  <img class="pc-card-image" *ngIf="dataPlan?.type === 'club_plan'" (click)="goToEventLink()" src="{{dataPlan?.eventPhoto}}">
+  <ion-card-header [ngClass]="{'nomargin':dataPlan?.type === 'club_plan'}" *ngIf="dataPlan.type !== 'group_plan' && dataPlan?.type !== 'club_plan'" (click)="goToItemPlan()">
+    <ion-card-subtitle
+    style="text-align: left;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;font-size: 18pt;white-space: nowrap;">
+  {{dataPlan?.title}}</ion-card-subtitle>
+  <ion-card-title
+  style="text-align: left;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;font-size: 18pt;white-space: nowrap; ">
+{{dataPlan?.description}}</ion-card-title>
+</ion-card-header>
+<ion-card-header [ngClass]="{'nomargin':dataPlan?.type === 'club_plan'}" *ngIf="dataPlan.type !== 'group_plan' && dataPlan?.type === 'club_plan'" (click)="goToEventLink()">
+  <ion-card-subtitle
+  style="text-align: left;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;font-size: 18pt;white-space: nowrap;">
+{{dataPlan?.title}}</ion-card-subtitle>
+<ion-card-title
+style="text-align: left;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;font-size: 18pt;white-space: nowrap; ">
+{{dataPlan?.description}}</ion-card-title>
+</ion-card-header>
+<ion-card-header *ngIf="dataPlan.type === 'group_plan'" (click)="goToItemPlan()">
+  <ion-card-subtitle
+  style="text-align: left;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;font-size: 13pt;white-space: nowrap;">
+{{dataPlan?.plan_date | date:'E, d MMMM y, HH:mm'}}</ion-card-subtitle>
+<ion-card-title
+style="text-align: left;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;font-size: 18pt;white-space: nowrap; ">
+{{dataPlan?.title}}</ion-card-title>
+</ion-card-header>
+<ion-card-content
+*ngIf="dataPlan?.type !== 'club_plan'"
+[ngClass]="{'card-content-ios':_globalServ?.iosDivice,'card-content-android':_globalServ?.androidDivice}">
+<ion-row>
+  <ion-col size="9">
+    <ion-item *ngIf="dataPlan.type !== 'group_plan'" class="ion-item-plan-card" lines="none">
+      <ion-avatar slot="start">
+        <img *ngIf="dataUser?.user?.image != null && dataUser?.user?.image != ''" class="img-avatar-pc" src="{{url}}/{{dataUser?.user?.image}}">
+        <img *ngIf="dataUser?.user?.image == null || dataUser?.user?.image == ''" class="img-avatar-pc" src="assets/img/empty_avatar.png">
+      </ion-avatar>
+      <ion-label style="margin-bottom: 12px" class="weight-600" *ngIf="dataUser?.user?.first_name">{{dataUser?.user?.first_name}} {{dataUser?.user?.last_name}}</ion-label>
+      <ion-label style="margin-bottom: 12px" class="weight-600" *ngIf="dataUser?.user?.name">{{dataUser?.user?.name}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="dataPlan.type === 'group_plan'" class="ion-item-plan-card" lines="none">
+      <ion-avatar slot="start">
+        <img *ngIf="dataPlan?.group?.image != null && dataPlan?.group?.image != ''" class="img-avatar-pc" src="{{dataPlan?.group?.image}}">
+        <img *ngIf="dataPlan?.group?.image == null || dataPlan?.group?.image == ''" class="img-avatar-pc" src="assets/img/empty_avatar.png">
+      </ion-avatar>
+      <ion-label style="margin-bottom: 12px" class="weight-600">{{dataPlan?.group?.title}}</ion-label>
+    </ion-item>
+  </ion-col>
+  <ion-col *ngIf="dataPlan.type !== 'club_plan'" size="3">
+    <ion-chip (click)="join()" class="join" [ngClass]="{'join-android':_globalServ?.androidDivice,'joined':dataPlan?.join}">
+      <ion-label *ngIf="dataPlan?.join != true">+ Join</ion-label>
+      <ion-label *ngIf="dataPlan?.join == true">- Leave</ion-label>
+    </ion-chip>
+  </ion-col>
+</ion-row>
+
+<ng-scrollbar [trackX]="true" [trackY]="false" *ngIf="getParticipants?.total !== 0">
+  <div class="scroll-content">
+    <div class="people-going" *ngIf="getParticipants?.total==1">
+      {{getParticipants?.total}} Person going
+    </div>
+    <div class="people-going" *ngIf="getParticipants?.total > 1">
+      {{getParticipants?.total}} {{ 'plan-card.peopleGoing' | translate }}
+    </div>
+    <ion-avatar *ngFor="let item of getParticipants?.participants" class="avatar-going">
+      <img *ngIf="_globalServ?.org == 'CEU' && item?.Ceu_User?.image != null && item?.Ceu_User?.image != ''" class="pc-avatar-image" [src]="item?.Ceu_User?.image">
+      <img *ngIf="_globalServ?.org == 'CEU' && item?.Ceu_User?.image == null || item?.Ceu_User?.image == ''" class="img-avatar-pc" src="assets/img/empty_avatar.png">
+      <img *ngIf="_globalServ?.org == 'IE' && item?.IE_User?.image != null && item?.IE_User?.image != ''" class="pc-avatar-image" [src]="item?.IE_User?.image">
+      <img *ngIf="_globalServ?.org == 'IE' && item?.IE_User?.image == null && item?.IE_User?.image != ''" class="img-avatar-pc" src="assets/img/empty_avatar.png">
+    </ion-avatar>
+  </div>
+</ng-scrollbar>
+</ion-card-content>
+</ion-card>

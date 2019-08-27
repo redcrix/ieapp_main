@@ -1,0 +1,29 @@
+.box-container .item{
+	float: left;
+	min-height: 200px;
+    width: 50%;//helps to determine number of columns, for instance 33.3% displays 3 columns
+}
+.item{
+	list-style-type: disc;
+}
+
+.img-cgi{
+	max-height: 250px;
+	min-height: 120px;
+	object-fit: cover;
+}
+
+.spinner-div {
+	text-align: center;
+	margin: 15px;
+}
+
+.title{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.one-line-two{
+	white-space: normal;
+}

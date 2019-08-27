@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col (click)="cancel()" class="column-left-title-cropp blue-text" size="3">
+        {{ 'image-cropper.cancel' | translate }}
+      </ion-col>
+      <ion-col class="column-center-title-cropp" size="6">
+        {{ 'image-cropper.moveAndScale' | translate }}
+      </ion-col>
+      <ion-col (click)="save()" class="column-right-title-cropp blue-text" size="3">
+        {{ 'image-cropper.save' | translate }}
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+  <div class="outer box-center-full">
+    <div class="middle">
+      <div class="inner">
+        <img *ngIf="pathImage != null" (click)="cropFunc()" [src]="pathImage">
+        <div class="box-center-full btns-box">
+          <span (click)="selectFile()" class="fas fa-upload icon-upload"></span>
+          <span *ngIf="pathImageCropper != null" (click)="cropFunc()" class="fas fa-cut icon-cut"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

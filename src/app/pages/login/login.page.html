@@ -1,0 +1,54 @@
+<ion-content>
+  <div [ngClass]="{'background-image-ie':_globalServ?.org === 'IE','background-image-ceu':_globalServ?.org === 'CEU'}">
+    <div class="half-page"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <ion-row>
+            <ion-col></ion-col>
+            <ion-col size="9" style="margin-top: -45px;">
+              <form [formGroup]="myForm" novalidate>
+                 <!-- <div class="alternate-theme-one">
+                  <ion-item style="opacity:1;font-weight: 600;--background: tranparent">
+                    <ion-label style="font-size: 13pt;" position="floating">{{ 'login.username' | translate }}
+                    </ion-label>
+                    <ion-input autocomplete="off" [formControl]="myForm.get('username')"></ion-input>
+                  </ion-item>
+                  <ion-item style="opacity:1;font-weight: 600;--background: tranparent">
+                    <ion-label style="font-size: 13pt;" position="floating">{{ 'login.password' | translate }}
+                    </ion-label>
+                    <ion-input type="password" autocomplete="off" [formControl]="myForm.get('password')"></ion-input>
+                  </ion-item>
+                  <mat-error *ngIf="nonExistentUser == true">{{ 'login.nonExistentUser' | translate }}</mat-error>
+                </div> 
+                 <ion-fab class="btn-login-internal" horizontal="end" slot="fixed">
+                  <ion-fab-button (click)="onSubmit(myForm.value)">
+                    <ion-icon name="md-arrow-forward"></ion-icon>
+                  </ion-fab-button>
+				</ion-fab>  -->
+
+				<!-- ************* Chnages by Ashwin ********** -->
+				  <h4  text-center class="loginText">LOG IN</h4>
+				 <ion-fab class="btn-login-new" horizontal="end" slot="fixed">
+                  <ion-fab-button (click)="loginOffice()" size="medium">
+                    <ion-icon name="md-arrow-forward" ></ion-icon>
+                  </ion-fab-button>
+                </ion-fab>  
+              </form>
+              <button type="button" (click)="onDirectLogin()">for Browser</button>
+              <div class="box-center-full box-login-office">
+                <div class="text-login-office">{{ 'login.title365' | translate }}</div>
+                <button (click)="loginOffice()" class="btn-login-office">
+                  <img src="/assets/img/365-office.jpg"> office 365
+                </button>
+              </div>  
+            </ion-col>
+            <ion-col></ion-col>
+          </ion-row>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </div>
+</ion-content>

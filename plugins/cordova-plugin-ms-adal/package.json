@@ -1,0 +1,95 @@
+{
+  "_args": [
+    [
+      "cordova-plugin-ms-adal@0.10.2",
+      "/home/ak47/ieapp"
+    ]
+  ],
+  "_from": "cordova-plugin-ms-adal@0.10.2",
+  "_id": "cordova-plugin-ms-adal@0.10.2",
+  "_inBundle": false,
+  "_integrity": "sha512-rjMy+wJoQF4/UClq/R0vUO9Ti/sGcu/Ao03VCOR60svSyaWTaYYsQLPQsk7vFL9epAb6U3RurWANuSeBkDanYA==",
+  "_location": "/cordova-plugin-ms-adal",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-ms-adal@0.10.2",
+    "name": "cordova-plugin-ms-adal",
+    "escapedName": "cordova-plugin-ms-adal",
+    "rawSpec": "0.10.2",
+    "saveSpec": null,
+    "fetchSpec": "0.10.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-ms-adal/-/cordova-plugin-ms-adal-0.10.2.tgz",
+  "_spec": "0.10.2",
+  "_where": "/home/ak47/ieapp",
+  "author": {
+    "name": "MSOpenTech"
+  },
+  "bugs": {
+    "url": "https://github.com/AzureAD/azure-activedirectory-library-for-cordova/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-ms-adal",
+    "platforms": [
+      "android",
+      "ios",
+      "windows"
+    ]
+  },
+  "description": "Provides Microsoft Azure Active Directory (ADAL) OAuth client.",
+  "engines": {
+    "cordovaDependencies": {
+      "0.10.0": {
+        "cordova": ">=5.4.0",
+        "cordova-android": ">=4.1.0",
+        "cordova-windows": ">=4.1.0"
+      },
+      "0.10.1": {
+        "cordova": ">=5.4.0",
+        "cordova-android": ">=4.1.0",
+        "cordova-windows": ">=4.1.0"
+      },
+      "0.8.0": {
+        "cordova": ">=5.4.0",
+        "cordova-android": ">=4.1.0",
+        "cordova-windows": ">=4.1.0"
+      },
+      "0.8.1": {
+        "cordova": ">=5.4.0",
+        "cordova-android": ">=4.1.0",
+        "cordova-windows": ">=4.1.0"
+      },
+      "0.9.0": {
+        "cordova": ">=5.4.0",
+        "cordova-android": ">=4.1.0",
+        "cordova-windows": ">=4.1.0"
+      },
+      "1.0.0": {
+        "cordova": ">=100"
+      }
+    }
+  },
+  "homepage": "https://github.com/AzureAD/azure-activedirectory-library-for-cordova#readme",
+  "keywords": [
+    "microsoft",
+    "azure",
+    "adal",
+    "activedirectory",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-windows"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-ms-adal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AzureAD/azure-activedirectory-library-for-cordova.git"
+  },
+  "version": "0.10.2"
+}

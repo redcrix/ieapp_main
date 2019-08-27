@@ -1,0 +1,51 @@
+<ion-content [scrollEvents]="true" (ionScroll)="logScrolling($event)">
+  <toolbar [setting]="true" [title]="pageTitleName? ('plan-list.plans' | translate) : ''"></toolbar>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <h1 class="title">{{ 'plan-list.plans' | translate }}</h1>
+        <ion-row>
+          <ion-col class="weight-600" size="6">{{ 'plan-list.recommended' | translate }}</ion-col>
+          <ion-col class="secondary-text view-all" size="6">{{ 'plan-list.viewMyPlans' | translate }}</ion-col>
+        </ion-row>
+
+        <div *ngIf="!_globalServ?.listPlanHighlight?.recommended_plans" class="spinner-div">
+          <ion-spinner name="lines"></ion-spinner>
+        </div>
+        <div *ngIf="_globalServ?.listPlanHighlight?.recommended_plans">
+          <ion-slides style="width: 100%;" [pager]="true">
+            <ion-slide *ngFor="let item of _globalServ?.listPlanHighlight?.recommended_plans" style="width: 100%;">
+              <plan-card [dataPlan]="item" style="width: 100%;"></plan-card>
+            </ion-slide>
+          </ion-slides>
+        </div>
+
+        <div style="margin-top: 66pt;"></div>
+        <div *ngIf="!_globalServ?.listPlanFiltered?.plans" class="spinner-div">
+          <ion-spinner name="lines"></ion-spinner>
+        </div>
+        <div *ngIf="_globalServ?.listPlanFiltered?.plans">
+          <div *ngFor="let item of _globalServ?.listPlanFiltered?.plans">
+            <plan-card style="margin-top: 30pt;" [dataPlan]="item"></plan-card>
+          </div>
+        </div>
+
+        <div style="margin-top: 66pt;"></div>
+        <ion-row>
+          <ion-col class="weight-600" size="6">Club plans</ion-col>
+        </ion-row>
+        <div *ngIf="!getClubPlans" class="spinner-div">
+          <ion-spinner name="lines"></ion-spinner>
+        </div>
+        <div *ngIf="getClubPlans">
+          <div *ngFor="let item of getClubPlans">
+            <plan-card style="margin-top: 30pt;" [dataPlan]="item"></plan-card>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

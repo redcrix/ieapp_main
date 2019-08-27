@@ -1,0 +1,104 @@
+/*.btn-back-content-item{
+    height: 75px;
+    position: fixed;
+    margin-top: 15px;
+    margin-left: 15px;
+    z-index: 9999;
+    //background: rgba(255,255,255,0.8);.
+    text-align: center;
+}
+
+.btn-back-item{
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px rgba(255,255,255,0.8);
+    padding: 3px 3px;
+    width: 21px;
+    background: rgba(255,255,255,0.8);
+}*/
+
+ion-content {
+    background: rgb(249, 249, 249);
+}
+
+
+.box-center-full{
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+.map-one{
+   margin-top: 20px;
+}
+
+table{
+    margin-top: 24pt;
+}
+
+.checkbox-item {
+    margin: 5px 0px;
+}
+
+.note-container {
+    background: rgb(249, 249, 249);
+    height: calc(100vh - 237px);
+    padding-top: 10px;
+
+    & .note {
+        color: rgb(170, 170, 170);
+    }
+}
+
+/*.sc-ion-card-md-h {
+    margin-left: 0px; 
+     margin-right: 0px;
+     margin-top: 0px; 
+     border-radius: 0px;
+}*/
+
+/*.item-avatar-card.hydrated{
+    --inner-border-width: 0;
+    --padding-start: 0;
+}*/
+
+.settings-screen {
+    margin-top: 100px;
+    padding: 0;
+    border-top: solid 1px rgb(224, 224, 224);
+    border-bottom: solid 1px rgb(224, 224, 224);
+}
+
+.settings {
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.settings-name {
+    font-weight: bold;
+}
+
+.settings-heading {
+    margin-top: 100px;
+    border-bottom: solid 1px #cccccc;
+    font-weight: bold;
+    padding: 5px 15px;
+}
+
+ion-radio {
+    width: 26px;
+    height: 26px;
+    border: solid 2px #c8c7cc;
+    border-radius: 26px;
+    --color: #009cd8;
+    --color-checked: white;
+}
+
+.checked {
+    background: #009cd8;
+    border-color: #009cd8;
+}
+
+ion-input{
+    font-size: 17pt;
+}

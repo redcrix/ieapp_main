@@ -1,0 +1,38 @@
+ion-button {
+    -webkit-appearance: none;
+}
+
+.box-center-full{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.item-instagram{
+    margin-left: 16px;
+    width: 100%;
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+
+.chip-inst{
+    margin-right: -2px;
+}
+
+ion-datetime{
+    width: 100%;
+    text-align: right;
+    color: #888;
+}
+
+.hr-profile{
+    width: 1500px !important;
+    background: rgb(224, 224, 224) !important;
+    display: block !important;
+    margin-left: -400px; 
+    visibility: visible !important;
+}
+.form-field{
+    margin-left: -15px;
+    margin-right: -15px;
+}

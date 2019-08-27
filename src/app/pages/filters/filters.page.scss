@@ -1,0 +1,36 @@
+.filter-by{
+    // font-weight: 600;
+    margin-bottom: 15px; 
+    font-size: 18px;
+}
+
+ng-scrollbar{
+    max-height: 80px;
+    margin-left: -4px;
+}
+
+.box-btn{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.scroll-content{
+    display: flex;
+}
+
+ion-chip{
+    display: inline-table;
+    //display: inline-block;
+    white-space: nowrap;
+    font-size: 14px;
+    //min-width: 120px;
+    //text-align: center;
+}
+
+.preferences{
+    font-size: 18px;
+}
+
+.filter-top{
+    margin-top: 20px;
+}

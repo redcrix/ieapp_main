@@ -1,0 +1,36 @@
+<ion-content>
+    <toolbar [back]="true" title="{{'write-comment.writeAComment' | translate}}"></toolbar>
+    <div class="container comment-container">
+      <div class="row" style="height: 100%;">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="height: 100%;">
+          <div style="margin-top: 40pt;"></div>
+          
+          <div class="comment-row" *ngFor="let comment of comments; let i = index">
+            <div class="comment-body">
+              <img class="comment-avatar" src="{{comment.fk_user_image}}" />  
+              <div>
+                <span class="comment-name">{{comment.fk_user_first_name}} {{comment.fk_user_last_name}}</span>
+                <span class="comment-text">{{comment.comment}}</span>
+              </div>
+            </div>
+            <div>
+              <span class="secondary-text">{{comment.duration}}</span>
+            </div>
+          </div>
+
+          <div class="form-bar">
+            <div class="add-button">
+              <ion-icon name="add"></ion-icon>
+            </div>
+            <div class="comment-input-group">
+              <ion-input [(ngModel)]="commentData"></ion-input>
+              <span class="send-button" (click)="addComment()">{{ 'write-comment.send' | translate }}</span>
+            </div>
+          </div>
+   
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </ion-content>

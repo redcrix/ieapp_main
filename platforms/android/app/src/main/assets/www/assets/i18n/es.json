@@ -1,0 +1,308 @@
+{
+    "login": {
+        "username": "Nombre de usuario",
+        "password": "Contraseña",
+        "required":"Requerido",
+        "title365":"o conéctate con:",
+        "nonExistentUser": "Usuario inexistente"
+    },
+    "profile": {
+        "profile":"Perfil",
+        "setting": "Ajuste",
+        "name": "Nombre",
+        "lastName": "Apellido",
+        "city":"Ciudad",
+        "faculty": "Facultad",
+        "from":"De",
+        "birthday":"Cumpleaños",
+        "emailAddress":"Email",
+        "language": "Idioma",
+        "instagram":"Instagram",
+        "connect":"Conectar",
+        "continue":"Continuar",
+        "english": "Ingles",
+        "spanish": "Español",
+        "joined": "Joined",
+        "preferences": "Preferencias",
+        "permissions": "Permisos",
+        "changePassword": "Cambia la contraseña",
+        "save": "Guardar"
+    },
+    "preferences": {
+        "preferences":"Preferencias",
+        "explanation":"Elija qué tipo de información le gustaría recibir en su Tablero personal. Puedes editar esa información más adelante en tu perfil.",
+        "saveAndContinue":"Guardar & Continuar",
+        "save": "Guardar"
+    },
+    "preferences-ok": {
+        "congrats": "Felicidades! Esta todo listo.",
+        "continue": "Continuar"
+    },
+    "filters": {
+        "filters": "Filtros",
+        "sortBy": "Ordenar por",
+        "preferences": "Preferencias",
+        "newest": "El más nuevo",
+        "mostPopular": "Mas popular",
+        "typeOfFeed": "Tipo de alimentación",
+        "all": "Todo",
+        "clubEvents": "Eventos de club",
+        "studentPlans": "Planes de estudiante",
+        "groupPlans": "Planes de grupo",
+        "date": "Fecha",
+        "today": "Hoy",
+        "tomorrow": "Mañana",
+        "thisWeek": "Esta semana",
+        "custom": "Personalizado",
+        "city": "Ciudad",
+        "madrid": "Madrid",
+        "segovia": "Segovia",
+        "showResults": "Mostrar resultados"
+    },
+    "city-guide-list": {
+        "cityGuide": "Guía de la Ciudad"
+    },
+    "city-guide-item": {
+        "Website": "Sitio web",
+        "Call": "Llamada",
+        "Directions": "Direcciones",
+        "createPlan": "Crear plan",
+        "details": "Detalles",
+        "readMore": "Lee mas",
+        "openingHours": "Horario de apertura",
+        "location": "Ubicación",
+        "howToGetThere": "Cómo llegar allá",
+        "share": "Compartir",
+        "bus": "Autobús",
+        "metro": "Metro"
+    },
+    "city-agenda-list": {
+        "cityAgenda": "Agenda de la Ciudad"
+    },
+    "city-agenda-item": {
+        "createPlan": "Crear plan",
+        "details": "Detalles",
+        "readMore": "Lee mas",
+        "dateAndTime": "Fecha y hora",
+        "addToCalendar": "Añadir al calendario",
+        "addedToCalendar": "Agregadas al calendario",
+        "location": "Ubicación",
+        "website": "Sitio web",
+        "directions": "Direcciones",
+        "price": "Precio",
+        "share": "Compartir"
+    },
+    "offers-discounts-list": {
+        "offersAndDiscounts": "Oferta y Descuentos."
+    },
+    "plan-list": {
+        "plans": "Planes",
+        "recommended": "Recomendado",
+        "viewMyPlans": "Ver mis planes"
+    },
+    "plan-item": {
+        "joined": "Unido",
+        "join":"Unirse",
+        "details": "Detalles",
+        "readMore": "Lee mas",
+        "createBy": "Creado por",
+        "going": "Yendo",
+        "dateAndTime": "Fecha y hora",
+        "addToCalendar": "Añadir al calendario",
+        "addedToCalendar": "Agregadas al calendario",
+        "location": "Ubicación",
+        "website": "Sitio web",
+        "directions": "Direcciones",
+        "price": "Precio",
+        "share": "Compartir",
+        "email": "Email"
+    },
+    "image-cropper": {
+        "moveAndScale": "Mover y escala",
+        "cancel": "Cancelar",
+        "save": "Guardar"
+    },
+    "language-list": {
+        "language":"Idioma",
+        "english": "Ingles",
+        "spanish": "Español",
+        "save": "Save",
+        "select": "Seleccionar"
+    },
+    "toolbar": {
+        "cancel":"Cancelar",
+        "reset": "Reiniciar",
+        "invite": "Invitación"
+    },
+    "more": {
+        "more":"Más",
+        "viewProfile": "Ver perfil",
+        "clubs": "Clubs",
+        "groups": "Clubs",
+        "settings": "Ajustes",
+        "about": "Nosotros",
+        "logOut": "Cerrar sesión"
+    },
+    "view-profile": {
+        "preferences":"Preferencias",
+        "clubs": "Clubs",
+        "groups": "Ver perfil",
+        "email": "Email",
+        "instagram": "Instagram",
+        "personalInformation": "Informacion personal",
+        "from": "De",
+        "birthdayOn": "Cumpleaños en",
+        "planAndEvents": "Plan & eventos",
+        "plans": "Plans",
+        "viewAll": "Ver todo"
+    },
+    "offers-discounts-item": {
+        "Website": "Website",
+        "Call": "Llamada",
+        "Directions": "Direcciones",
+        "details": "Detalles",
+        "readMore": "Lee mas",
+        "validUntil": "Válido hasta",
+        "price": "Precio",
+        "openingHours": "Horario de apertura",
+        "location": "Ubicación",
+        "howToGetThere": "Cómo llegar allá",
+        "share": "Compartir"
+    },
+    "plan-card": {
+        "peopleGoing": "Llendo"
+    },
+    "search": {
+        "all": "Todas",
+        "people": "Personas",
+        "studentPlan": "Plan de estudiante",
+        "events": "Eventos",
+        "offersAndDiscount": "Ofertas & Descuentos",
+        "recentSearches": "BÚSQUEDAS RECIENTES",
+        "peopleCL": "PERSONAS",
+        "studentPlans": "PLANES DE ESTUDIO",
+        "eventsCL": "EVENTS",
+        "offersAndDiscountCL": "OFERTAS Y DESCUENTOS"
+    },
+    "notifications": {
+        "notifications": "Notificaciones",
+        "todayCL": "HOY",
+        "thisWeekCL": "ESTA SEMANA",
+        "thisMonthCL": "ESTE MES"
+    },
+    "plan-create": {
+        "createaPlan": "Crear un plan",
+        "createBy": "Creado por",
+        "planDate": "Fecha del plan",
+        "limitDate": "Fecha límite",
+        "noLimitDate": "Sin fecha límite",
+        "category": "Categoría",
+        "avalibleSeats": "Asientos disponibles",
+        "noLimits": "Sin limites",
+        "plublishThePlan": "Publicar el plan",
+        "pick": "Pick",
+        "title": "Título",
+        "location": "Ubicación",
+        "details": "Detalles",
+        "groupGroupPlan": "Grupo (plan grupal)"
+    },
+    "about": {
+        "about": "Nosotros",
+        "aboutVIVEIE": "Acerca de VIVE IE",
+        "aboutCEU": "Acerca de CEU",
+        "textAbout": "Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc.",
+        "checkThePrivacyPolicy": "Consulta la política de privacidad",
+        "contactUs": "Contáctenos",
+        "followUs": "Síguenos"
+    },
+    "club-detail": {
+        "details": "Detalles",
+        "members": "Miembros",
+        "createdBy": "Creado por",
+        "plans": "Planes",
+        "readMore": "Lee mas",
+        "join": "Unirse",
+        "joined": "Unida"
+    },
+    "group-detail": {
+        "details": "Detalles",
+        "members": "Miembros",
+        "comments": "Comentarios",
+        "plans": "Planes",
+        "readMore": "Lee mas",
+        "joined": "Unida",
+        "join": "Unirse",
+        "createPlan": "Crear un plan",
+        "addAComment": "Añadir un comentario",
+        "invite": "Invitación",
+        "cancel": "Cancelar"
+    },
+    "group-create": {
+        "createaGroup": "Crear un grupo",
+        "category": "Categoría",
+        "settings": "Configuraciones",
+        "membersCanCreatePlan": "Los miembros pueden crear un plan",
+        "invitePeople": "Invitar a la gente",
+        "invite": "Invitación",
+        "pick": "Recoger",
+        "title": "Título",
+        "details": "Detalles",
+        "createTheGroup": "Crea el grupo"
+    },
+    "group-create-category": {
+        "pickup3": "Elige hasta 3 categorías",
+        "category": "Categoría"
+    },
+    "group-create-settings": {
+        "settings": "Configuraciones",
+        "memberCanCreate": "Los miembros pueden crear un plan",
+        "memberCannotCreate": "Los miembros no pueden crear un plan",
+        "setting3": "Configuraciones 3"
+    },
+    "group-create-invite": {
+        "invite": "Invitación",
+        "searchPeople": "Busca gente"
+    },
+    "group-create-success": {
+        "continue": "Continuar",
+        "successMsg": "Su solicitud de creación de grupo ha sido enviada al administrador, se le notificará sobre el estado"
+    },
+    "groups": {
+        "groups": "Grupos",
+        "recommendedGroups": "Grupos recomendados",
+        "viewAll": "Ver todo",
+        "hideAll": "Ocultar todo",
+        "noGroups": "No grupos",
+        "yourGroups": "Sus grupos"
+    },
+    "write-comment": {
+        "writeAComment": "Escribir un comentario",
+        "send": "Enviar"
+    },
+    "joined": {
+        "studentPlans": "Planes de estudiantes",
+        "groupPlans": "Planes grupales",
+        "clubs": "Clubs", 
+        "groups": "Grupos",
+        "viewAllGroups": "Ver todos los grupos"
+    },
+    "clubs": {
+        "clubs": "Clubs",
+        "recommendedClubs": "Clubes recomendados",
+        "hideAll": "Ocultar todo",
+        "viewAll": "Ver todo",
+        "noClubs": "No hay clubes",
+        "yourClubs": "Sus clubes"
+    },
+    "group-plan-item": {
+        "details": "Detalles",
+        "readMore": "Lee mas",
+        "join": "Unirse",
+        "joined": "Unido",
+        "createdBy": "Creado por",
+        "going": "Yendo",
+        "date": "Fecha",
+        "addToCalendar": "Añadir al calendario",
+        "location": "Ubicación"
+    }
+}

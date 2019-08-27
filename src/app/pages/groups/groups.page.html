@@ -1,0 +1,66 @@
+<ion-content
+  [scrollEvents]="true"
+  (ionScrollStart)="logScrollStart()"
+  (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()"
+>
+  <toolbar [title]="showFixedHeader() ? ('groups.groups' | translate) : ''" [back]="true"></toolbar>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <h1 class="title">{{'groups.groups' | translate}}</h1>
+      </div>
+      <div class="col-md-12">
+        <div class="all-group-header">
+          <h4 class="title">{{'groups.recommendedGroups' | translate}}</h4>
+          <span class="view-all" (click)="isViewAllForRecommend = !isViewAllForRecommend">
+            {{isViewAllForRecommend ? ('groups.hideAll' | translate) : ('groups.viewAll' | translate)}}
+          </span>
+        </div>
+        <div class="group-card-row" *ngIf="recommendedGroups.length !== 0">
+          <div class="text-center group-card" *ngFor="let rGroup of recommendedGroups; let i=index" (click)="goToGroupDetail(rGroup)">
+            <div *ngIf="i < getNumberOfLimitForGroups('recommendedGroups')">
+              <img src="{{rGroup?.image}}" />
+              <h5 class="title">{{rGroup?.title}}</h5>
+              <div class="icon-status">
+                <ion-icon name="ios-person"></ion-icon>
+                <span class="status">{{rGroup?.group_members_count}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group-card-row" *ngIf="recommendedGroups.length === 0">
+          <div class="empty-text">
+            {{'groups.noGroups' | translate}}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="all-group-header">
+          <h4 class="title">{{'groups.yourGroups' | translate}}</h4>
+          <span class="view-all" (click)="isViewAllForGroups = !isViewAllForGroups">
+            {{isViewAllForGroups ? ('groups.hideAll' | translate) : ('groups.viewAll' | translate)}}
+          </span>
+        </div>
+        <div class="group-card-row" *ngIf="allGroups.length !== 0">
+          <div class="text-center group-card" *ngFor="let allGroup of allGroups; let i=index" (click)="goToGroupDetail(allGroup)">
+            <div *ngIf="i < getNumberOfLimitForGroups('groups')">
+              <img src="{{allGroup?.image}}" />
+              <h5 class="title">{{allGroup?.title}}</h5>
+              <div class="icon-status">
+                <ion-icon name="ios-person"></ion-icon>
+                <span class="status">{{allGroup?.group_members_count}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group-card-row" *ngIf="allGroups.length === 0">
+          <div class="empty-text">
+            {{'groups.noGroups' | translate}}
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</ion-content>

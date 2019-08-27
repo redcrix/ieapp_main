@@ -1,0 +1,191 @@
+/* ion-tab-bar {
+    border: none;
+}
+
+ion-tab-button {
+    // border-top: solid 1px;
+    border-color: #989aa2;
+    background: white;
+} */
+
+/* .no-border {
+    border: none;
+    background: transparent;
+    
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50%;
+    // background: radial-gradient(at top,rgba(252, 248, 70, 0),rgba(252, 248, 70, 0) 18%,rgba(252, 248, 70, 0),rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+    z-index: 1;
+}
+
+.no-border2 {
+    border: none;
+    
+    bottom: -20px;
+    left: 0px;
+    width: 100%;
+    height: 50%;
+    
+    z-index: 1;
+    position: absolute;
+    @media (max-width: 414px) {
+        bottom: 0px;
+        width: 86px;
+        left: calc(50% - 43px);
+        background: radial-gradient(at top, rgba(252, 248, 70, 0), rgba(252, 248, 70, 0) 63%, white 1%);
+    }
+    @media (max-width: 411px) {
+        bottom: 0px;
+        width: 90px;
+        left: calc(50% - 45px);
+        background: radial-gradient(at top, rgba(252, 248, 70, 0), rgba(252, 248, 70, 0) 62%, white 1%);
+    }
+    @media (max-width: 375px) {
+        bottom: 0px;
+        width: 76px;
+        left: calc(50% - 38px);
+        background: radial-gradient(at top, rgba(252, 248, 70, 0), rgba(252, 248, 70, 0) 68%, white 1%);
+    }
+    @media (max-width: 360px) {
+        bottom: 0px;
+        width: 75px;
+        left: calc(50% - 39px);
+        background: radial-gradient(at top, rgba(252, 248, 70, 0), rgba(252, 248, 70, 0) 61%, white 1%);
+    }
+    @media (max-width: 320px) {
+        bottom: 0px;
+        width: 66px;
+        left: calc(50% - 33px);
+        background: radial-gradient(at top,rgba(252, 248, 70, 0),rgba(252, 248, 70, 0) 64%,white 1%);
+    }
+}
+
+.notifications-tab-button {
+    border-top-right-radius: 100px;
+    border-top: solid 1px;
+    border-color: #989aa2;
+    
+    @media (max-width: 414px) {
+        border-top-right-radius: 20px;
+        border-top: solid 1px;
+        border-color: #989aa2;
+    }
+}
+
+.plus-tab-button {
+    border-top-left-radius: 100px;
+    border-top: solid 1px;
+    border-color: #989aa2;
+    
+    @media (max-width: 414px) {
+        border-top-left-radius: 20px;
+        border-top: solid 1px;
+        border-color: #989aa2;
+    }
+}
+
+ion-fab {
+    transform: translateX(-8%);
+    border-bottom: solid 1px;
+    border-radius: 76px;
+    position: absolute;
+    bottom: -42px;
+    padding: 5px;
+
+    @media (max-width: 414px) {
+        transform: translateX(-8%);
+        border-bottom: solid 1px;
+        border-radius: 84px;
+        position: absolute;
+        bottom: -45px;
+        padding: 15px;
+        left: 198px;
+    }
+
+    @media (max-width: 411px) {
+        transform: translateX(-8%);
+        border-bottom: solid 1px;
+        border-radius: 84px;
+        position: absolute;
+        bottom: -12px;
+        padding: 16px;
+        left: 197px;
+    }
+
+    @media (max-width: 375px) {
+        transform: translateX(-8%);
+        border-bottom: solid 1px;
+        border-radius: 76px;
+        position: absolute;
+        bottom: -48px;
+        padding: 10px;
+        left: 184px;
+    }
+
+    @media (max-width: 360px) {
+        transform: translateX(-8%);
+        border-bottom: solid 1px;
+        border-radius: 76px;
+        position: absolute;
+        bottom: -10px;
+        padding: 9px;
+        left: 176px;
+    }
+
+    @media (max-width: 320px) {
+        transform: translateX(-8%);
+        border-bottom: solid 1px;
+        border-radius: 76px;
+        position: absolute;
+        bottom: -42px;
+        padding: 5px;
+        left: 160px;
+    }
+} */
+
+.icon-tab{
+    font-size: 25px;
+}
+
+ion-fab-list ion-fab-button{
+    --color: white;
+    font-size: 15px;
+}
+
+ion-fab-list ion-fab-button.plan-list{
+    --background: #009CD7;
+}
+
+ion-fab-list ion-fab-button.city-guide{
+    --background: #05A754;
+}
+
+ion-fab-list ion-fab-button.city-agenda{
+    --background: #EC71A8;
+}
+
+ion-fab-list ion-fab-button.offer-discount{
+    --background: #F5AB28;
+}
+
+.ios-fab{
+    margin-bottom:45px;
+}
+
+.android-fab{
+    margin-bottom:15px;
+}
+
+
+/* .mtabs {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: rgb(140, 140, 140);
+    background-color: rgba(255, 255, 255, 0);
+} */

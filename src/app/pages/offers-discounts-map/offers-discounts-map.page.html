@@ -1,0 +1,117 @@
+<ion-content no-bounce>
+  <div class="btn-back-content-item" [ngClass]="{'btn-back-content-item-ios':_globalServ?.iosDivice}">
+    <span (click)="goBack()" class="btn-back-item fas fa-chevron-left"></span>
+  </div>
+  <div id="map" class="map" #map></div>
+  <ion-fab (click)="refreshLatLong()" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <div class="fas fa-crosshairs"></div>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<ion-bottom-drawer class="drawer" [state]="state" [minimumHeight]="40" [shouldBounce]="true"
+  [distanceTop]="distanceTop">
+  <input type="text" id="all" hidden="hidden">
+  <input type="text" id="latInit" hidden="hidden">
+  <input type="text" id="longInit" hidden="hidden">
+  <input type="number" id="state" (click)="stateFunc()" hidden="hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="box-center-full">
+          <span class="line-bottom-drawer"></span>
+        </div>
+        <div id="drawer-content">
+          <ion-row>
+            <ion-col size="5">
+              <ion-card>
+                <img class="image-card-odm" id="imgDesc" src="">
+              </ion-card>
+            </ion-col>
+            <ion-col size="7">
+              <div style="margin-top: 15px;">
+                <table>
+                  <tr>
+                    <td>
+                      <ion-avatar style="min-width: 35px;min-height:35px;max-width: 35px;max-height:35px">
+                        <img id="imgProfile" src="">
+                      </ion-avatar>
+                    </td>
+                    <td><span style="margin-right: 15px"></span>
+                      <span id="avatar"
+                        style="text-align: left;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"
+                        class="odm-avatar">
+                      </span></td>
+                  </tr>
+                </table>
+
+                <table style="margin-top: 10px;margin-left: 10px;">
+                  <tr>
+                    <td>
+                      <ion-icon class="odm-icon" name="ios-alert"></ion-icon>
+                    </td>
+                    <td class="secondary-text"><span style="margin-right: 23px"></span>
+                      <span id="title"
+                        style="text-align: left;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <ion-icon class="odm-icon" name="md-calendar"></ion-icon>
+                    </td>
+                    <td class="secondary-text"><span style="margin-right: 23px"></span>
+                      <span id="validUntil"
+                        style="text-align: left;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <ion-icon class="odm-icon" name="pin"></ion-icon>
+                    </td>
+                    <td class="secondary-text"><span style="margin-right: 23px"></span>
+                      <span id="address"
+                        style="text-align: left;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+
+                      </span>
+                    </td>
+                  </tr>
+                </table>
+
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <div class="box-center-full">
+            <ng-scrollbar [trackX]="true" [trackY]="false">
+              <div style="display: flex;width: 550px;">
+                <ion-button class="button-two" shape="round">
+                  <div class="more-box-icon-text">
+                    <ion-icon class="more-icon" name="ios-alert"></ion-icon> <span class="more-item-text">Info</span>
+                  </div>
+                </ion-button>
+                <ion-button (click)="goToDirections()" class="button-two" shape="round">
+                  <div class="more-box-icon-text">
+                    <ion-icon class="more-icon" name="ios-paper-plane"></ion-icon> <span
+                      class="more-item-text">Directions</span>
+                  </div>
+                </ion-button>
+                <ion-button (click)="goToCode()" class="button-two" shape="round">
+                  <div class="more-box-icon-text">
+                    <ion-icon class="more-icon" name="ios-barcode"></ion-icon> <span class="more-item-text">Code</span>
+                  </div>
+                </ion-button>
+              </div>
+            </ng-scrollbar>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-bottom-drawer>

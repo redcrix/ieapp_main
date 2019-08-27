@@ -1,0 +1,30 @@
+<ion-content style="--background: #f9f9f9">
+  <toolbar [back]="true" title="{{'profile.joined' | translate}}" style="opacity: 1;"></toolbar>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <!-- <div style="margin-top: 40pt;"></div> -->
+        <hr class="hr-joined">
+        <ion-item (click)="goToStudentPlan()" lines="none">
+          <label class="join-item" position="fixed">{{ 'joined.studentPlans' | translate }}</label>
+          <span slot="end" style="font-size: 17pt;" class="fas fa-chevron-right secondary-text"></span>
+        </ion-item>
+        <ion-item (click)="goToGroupPlan()" lines="none">
+          <label class="join-item" position="fixed">{{ 'joined.groupPlans' | translate }}</label>
+          <span slot="end" style="font-size: 17pt;" class="fas fa-chevron-right secondary-text"></span>
+        </ion-item>
+        <ion-item *ngIf="_globalServ?.org == 'CEU'" (click)="goToClubs()" lines="none">
+          <label class="join-item" position="fixed">{{ 'joined.clubs' | translate }}</label>
+          <span slot="end" style="font-size: 17pt;" class="fas fa-chevron-right secondary-text"></span>
+        </ion-item>
+        <ion-item (click)="goToGroups()" lines="none">
+          <label class="join-item" position="fixed">{{ 'joined.groups' | translate }}</label>
+          <span slot="end" style="font-size: 17pt;" class="fas fa-chevron-right secondary-text"></span>
+        </ion-item>
+        <hr class="hr-joined" style="margin-bottom: 0;">
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

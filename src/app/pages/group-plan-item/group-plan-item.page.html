@@ -1,0 +1,150 @@
+<ion-content>
+  <div class="btn-back-content-item" [ngClass]="{'btn-back-content-item-ios':_globalServ?.iosDivice}">
+    <span (click)="goBack()" class="btn-back-item fas fa-chevron-left"></span>
+  </div>
+  <div>
+    <img *ngIf="groupPlanItem?.image && isValidClubImage" class="main-item-image" src="{{groupPlanItem?.image}}" (error)="updateClubUrl($event)">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+
+        <div class="item-title">
+          <h2>
+            <span>{{groupPlanItem?.title}}</span>
+          </h2>
+        </div>
+        <div class="box-center-full">
+          <div class="box-blue-circle" (click)="joinClub()">
+            <img *ngIf="isJoined" src="../../../assets/img/fab_checked.png"/>
+            <img *ngIf="!isJoined" src="../../../assets/img/fab.png"/>
+            <p class="secondary-text" style="margin-top: 5px" [style.color]="isJoined ? '#009cd8' : 'black'">
+              <span *ngIf="isJoined">{{ 'group-plan-item.joined' | translate }}</span>
+              <span *ngIf="!isJoined">{{ 'group-plan-item.join' | translate }}</span>
+            </p>
+          </div>
+        </div>
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="information-circle"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'group-plan-item.details' | translate }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="secondary-text">
+              <span *ngIf="_globalServ?.language == 'en'">{{groupPlanItem?.description}}</span>
+              <span *ngIf="_globalServ?.language == 'es'">{{groupPlanItem?.description}}</span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="blue-text size-18-pt">{{ 'group-plan-item.readMore' | translate }}</td>
+          </tr>
+        </table>
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="ios-star"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'group-plan-item.createdBy' | translate }}</td>
+          </tr>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>
+                <span>
+                  <img class="members-avatar" src="{{groupPlanItem?.image}}" />
+                </span>
+                <span class="secondary-text" style="margin-left: 10px;">{{groupPlanItem?.group?.title}} </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="ios-checkmark-circle"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'group-plan-item.going' | translate }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <span *ngFor="let partner of going; let i = index">
+                <img *ngIf="i < math.round((innerWidth - 70 - 2*37) / 37)" class="members-avatar" src="{{partner?.image}}" />
+              </span>
+              <span *ngIf="going.length > math.round((innerWidth - 70 - 2*37) / 37)" class="more-member">
+                +{{going.length - math.round((innerWidth - 70 - 2*37) / 37)}}
+              </span>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="clock"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'group-plan-item.date' | translate }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p class="secondary-text" style="margin-bottom: 5px;">
+                {{groupPlanItem.plan_date | date:'E, d MMMM y'}}
+              </p>
+              <ion-chip class="btn-blue-general">
+                <ion-label>{{ 'group-plan-item.addToCalendar' | translate }}</ion-label>
+              </ion-chip>
+            </td>
+          </tr>
+        </table>
+        <table style="width: 100%;">
+          <tr class="weight-600">
+            <td style="width: 34px;">
+              <ion-icon class="icon-item" name="pin"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'group-plan-item.location' | translate }}</td>
+          </tr>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>
+                <p class="secondary-text" style="margin-bottom: 5px;">
+                  {{groupPlanItem.address}}
+                </p>
+                <div *ngIf="groupPlanItem.latitude !== null && groupPlanItem.longitude !== null">
+                  <div id="map" class="map-one" #map></div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- 
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="pin"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'club-detail.plans' | translate }}</td>
+          </tr>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <ion-slides style="width: 100%;" [pager]="true">
+          <ion-slide style="width: 100%;" *ngFor="let plan of plans;">
+            <plan-card [dataPlan]="plan" style="width: 100%;"></plan-card>
+          </ion-slide>
+        </ion-slides> -->
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

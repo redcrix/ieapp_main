@@ -1,0 +1,26 @@
+<ion-content>
+  <div class="container nopadding">
+    <div class="row graybg">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 success-container">
+
+        <div class="msgicon">
+          <div class="icon">
+            <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
+          </div>
+          <div class="comment">
+            {{ 'group-create-success.successMsg' | translate }}
+          </div>
+        </div>
+
+        <div class="box-center-full btn-pc-box">
+          <ion-button (click)="continue()" class="button-one" shape="round">
+            <span>{{ 'group-create-success.continue' | translate }}</span>
+          </ion-button>
+        </div>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

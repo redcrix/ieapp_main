@@ -1,0 +1,33 @@
+<ion-content>
+  <toolbar
+    [title]="'group-create-settings.settings' | translate"
+    [back]="true"
+  >
+  </toolbar>
+  <div class="container settings-screen">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <ion-radio-group allow-empty-selection [(ngModel)]="groupSettingValue">
+          <ion-item class="checkbox-item" lines="none" *ngFor="let item of groupCreateSettings; let i = index" (click)="changeStatus(i, $event)">
+            <ion-label>{{item.name}}</ion-label>
+            <ion-radio [ngClass]="{'checked': item.id === groupSettingValue}" [value]="item.id" [checked]="item.id === groupSettingValue" slot="end"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+  <div class="container note-container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <span class="note">
+          You can change group settings later by going to the group and clicking 
+          <ion-icon name="more"></ion-icon>
+        </span>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

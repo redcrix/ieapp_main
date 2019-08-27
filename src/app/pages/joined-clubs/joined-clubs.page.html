@@ -1,0 +1,37 @@
+<ion-content>
+  <toolbar [back]="true" title="Joined clubs"></toolbar>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div style="margin-top: 40pt;"></div>
+        <div class="joined-club-header">
+          <span class="view-all" (click)="goToClubList()">
+            {{ 'view-profile.viewAll' | translate }}
+          </span>
+        </div>
+
+        <div class="box-container">
+          <div *ngFor="let item of itemClub" class="item" (click)="goToClubDetail(item)">
+            <ion-card>
+              <img src="{{url}}/get-ceu-club-image/{{item?.image}}">
+            </ion-card>
+            <div
+              style="display: -webkit-box;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;font-weight: 500;white-space: nowrap;"
+              class="box-center-full" [ngClass]="{'vp-ios-text-card':_globalServ?.iosDivice}">
+              {{item?.title}}
+            </div>
+            <div class="box-center-full">
+              <div class="secondary-text">
+                <ion-icon class="jc-icon" name="ios-person"></ion-icon> <span class="jc-item-text"> {{item?.countUser}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

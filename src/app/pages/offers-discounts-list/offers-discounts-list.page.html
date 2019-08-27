@@ -1,0 +1,20 @@
+<ion-content 
+[scrollEvents]="true"
+(ionScroll)="logScrolling($event)">
+<toolbar [map]="true" [setting]="true" [title]="pageTitleName ? ('offers-discounts-list.offersAndDiscounts' | translate) : ''"></toolbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1 class="title">{{ 'offers-discounts-list.offersAndDiscounts' | translate }}</h1>
+      <div *ngIf="!_globalServ.listOfferAndDisc?.discounts" class="spinner-div">
+        <ion-spinner name="lines"></ion-spinner>
+      </div>
+      <div *ngIf="_globalServ.listOfferAndDisc?.discounts" class="spinner-div">
+        <offer-discount-card *ngFor="let item of _globalServ.listOfferAndDisc?.discounts" [dataOffDisc]="item"></offer-discount-card>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+</ion-content>

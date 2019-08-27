@@ -1,0 +1,558 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+//angular material
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+//**************************** input **************************************
+//Needs to set to SFProText (to match design)
+@font-face {
+    font-family: 'Avenir';
+    src: url('assets/font/AvenirLT-Heavy.woff2') format('woff2'),
+    url('assets/font/AvenirLT-Heavy.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Regular';
+    src: url('assets/font/SFProText-Regular.woff2') format('woff2'),
+    url('assets/font/SFProText-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Heavy';
+    // src: url('assets/font/SFProDisplay-Heavy.woff2') format('woff2'),
+    // url('assets/font/SFProDisplay-Heavy.woff') format('woff');
+    src: url('assets/font/SFProText-Heavy.woff2') format('woff2'),
+    url('assets/font/SFProText-Heavy.woff') format('woff');
+    // font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Bold';
+    // src: url('assets/font/SFProDisplay-Bold.woff2') format('woff2'),
+    // url('assets/font/SFProDisplay-Bold.woff') format('woff');
+    src: url('assets/font/SFProText-Bold.woff2') format('woff2'),
+    url('assets/font/SFProText-Bold.woff') format('woff');
+    // font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Medium';
+    // src: url('assets/font/SFProDisplay-Medium.woff2') format('woff2'),
+    // url('assets/font/SFProDisplay-Medium.woff') format('woff');
+    // font-weight: 500;
+    src: url('assets/font/SFProText-Medium.woff2') format('woff2'),
+    url('assets/font/SFProText-Medium.woff') format('woff');
+    font-style: normal;
+}
+
+.full-width-input {
+    width: 100%;
+}
+
+/*.ion-item-one.hydrated {
+    --border-width: 0 0 0 0;
+}*/
+
+.input-one{
+    color: #888;
+    text-align:right;
+}
+
+.label-one {
+    font-size: 16px;
+    font-family: 'SF Pro Regular';
+}
+
+/*.ion-item-one .label-fixed.sc-ion-label-md-h {
+    flex: auto;
+    width: auto;
+    min-width: auto;
+    max-width: max-content;
+}*/
+//**************************** box **************************************
+.box-center-full{
+    width: 100%;
+    text-align: center;
+}
+
+.box-center-75{
+    width: 75%;
+    text-align: center;
+}
+//**************************** button **************************************
+.button-one{
+    min-width: 170px;
+    // font-size: 17px;
+    font-size: 17px;
+    // height: 44px;
+    height: 48px;
+    text-transform: none;
+    letter-spacing: unset;
+    line-height: 23px;
+}
+
+.button-two{
+    font-size: 17px;
+    height: 44px;
+    text-transform: none;
+    letter-spacing: unset;
+}
+
+.btn-facebook{
+    color:rgb(59, 89, 152);
+    background: rgb(211, 217, 229);
+    font-size: 14px;
+}
+
+.btn-twitter{
+    color:rgb(85, 172, 238);
+    background: rgb(216, 233, 247);
+    font-size: 14px;
+}
+
+.btn-email{
+    color:rgb(220, 78, 65);
+    background: rgb(243, 215, 212);
+    font-size: 14px;
+}
+
+.btn-whatsapp{
+    color:rgb(26, 214, 64);
+    background: rgb(204, 242, 212);
+    font-size: 14px;
+}
+
+.btn-blue-general{
+    color:rgb(0, 156, 215);
+    background: rgb(199, 230, 242);
+    font-size: 14px;
+}
+
+.btn-float-one{
+    position:fixed;
+    bottom:0;
+    right: 0;
+    left: 0;
+    margin-bottom: 25px;
+}
+//**************************** custom angular material **************************************
+@import '~@angular/material/theming';
+@include mat-core();
+
+/*$my-app-primary: mat-palette($mat-blue-grey);
+$my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
+$my-app-warn:    mat-palette($mat-deep-orange);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+@include angular-material-theme($my-app-theme);*/
+$md-skyblue: (
+    50 : #e5f2fd,
+    100 : #bfdefb,
+    200 : #95c8f8,
+    300 : #6ab1f5,
+    400 : #4aa1f2,
+    500 : #000000,
+    600 : #2588ee,
+    700 : #1f7dec,
+    800 : #1973e9,
+    900 : #0f61e5,
+    A100 : #ffffff,
+    A200 : #dee9ff,
+    A400 : #abc8ff,
+    A700 : #91b7ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+        )
+    );
+
+.alternate-theme-one {
+ /* $alternate-primary: mat-palette($md-skyblue,50);
+  $alternate-accent:  mat-palette($md-skyblue, 50);
+  $alternate-warn: mat-palette($md-skyblue,50);
+
+  $alternate-theme-one: mat-light-theme($alternate-primary, $alternate-accent, $alternate-warn);*/
+
+  //@include mat-form-field-theme($alternate-theme-one); // Form-Field theme
+  //@include mat-input-theme($alternate-theme-one);
+
+ // @include angular-material-theme($alternate-theme-one);
+
+ //$default-theme: mat-dark-theme(mat-palette($md-skyblue, 500), mat-palette($md-skyblue, 500));
+ //@include angular-material-theme($default-theme);
+
+ $primary: mat-palette($md-skyblue);
+ $accent: mat-palette($md-skyblue);
+ $theme: mat-light-theme($primary, $accent);
+ @include angular-material-theme($theme);
+}
+
+.accent-color {
+    //color: mat-color($md-skyblue, 500) !important;
+}
+
+
+//**************************** circles ****************************
+//1
+.circle {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px rgb(200, 199, 204);
+    //padding: 35px 35px;
+    width: 88px;
+    height: 88px;
+}
+
+.circle-req {
+    box-shadow: 0px 0px 2px rgb(235, 38, 38) !important;
+}
+
+.icon{
+    font-size: 30px;
+    color: rgb(200, 199, 204);
+    
+    margin-top: 38px;
+}
+
+//2
+.box-blue-circle{
+    margin: 10px;
+    display:inline-block;
+}
+
+.blue-circle {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #C6E6F3;
+    background: #C6E6F3;
+    //padding: 15px 15px;
+    //height: 48px;
+    //width: 48px;
+    height: 40px;
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+.icon-blue{
+    //font-size: 13px;
+    font-size: 20px;
+    color: #009cd7;
+    //margin-top: 17px;
+    //padding-top: 25px;
+    padding: 10px 11px;
+}
+//3
+.grey-circle {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px rgb(235, 233, 233);
+    background: rgb(238, 238, 238);
+    //padding: 24px 24px;
+    height: 24px;
+    min-width: 24px;
+    padding-left: 6px;
+    text-align: center;
+    padding-right: 6px;
+    padding-top: 5px;
+}
+
+//4
+.box-data-vp{
+    margin: 10px;
+    display:inline-block;
+}
+
+.data-circle-vp {
+    display: inline-block;
+    border-radius: 60px;
+    //box-shadow: 0px 0px 2px #C6E6F3;
+    //background: #C6E6F3;
+    //padding: 15px 15px;
+    //height: 48px;
+    width: 48px;
+    //margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.data-text-vp{
+    font-size: 14px;
+    color: rgb(170, 170, 170);
+}
+
+//**************************** index slide **************************** 
+.swiper-pagination-bullet-active {
+    background: rgb(128, 128, 128);
+}
+
+.swiper-pagination-bullet {
+    background: black;
+}
+
+.swiper-pagination {
+    position: unset;
+}
+
+//**************************** text ****************************
+
+.title{
+    // font-weight: 600;
+    font-size: 36px;
+    font-family: 'SF Pro Bold';
+    letter-spacing: -0.72px;
+}
+h4{
+    font-family: 'SF Pro Medium'!important;
+}
+
+.secondary-text{
+    color: #888;
+    font-size: 13px;
+}
+
+.weight-600{
+    font-weight: 600;
+}
+
+.one-line{
+    text-align: left;
+    display: -webkit-box;
+    max-width: 100%;
+    /* margin: 0 auto; */
+    /* line-height: 1; */
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blue-text{
+    color: #009cd7;
+}
+
+.item-title{
+    margin-left: 25px;
+    //font-weight: 600;
+    font-size: 20px;
+    font-family: 'SF Pro Heavy';
+}
+
+.size-18-px{
+    font-size: 18px;
+}
+
+.one-line-two{
+    max-width: 100%;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.two-line-one{
+    height: 40px;
+    overflow:hidden; 
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.req{
+    color: rgb(235, 38, 38) !important;
+}
+
+//**************************** chip ****************************
+.chip-pasive{
+    background: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #009cd7;
+    color:#009cd7
+}
+
+.chip-active{
+    background: #009cd7;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #009cd7;
+    color:white
+}
+//**************************** map ****************************
+.box-map-one{
+    margin-left: 28px;
+    margin-right: 28px;
+}
+
+.map-one{
+    width: 100%;
+    height: 175px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    z-index: 99;
+}
+
+#map > div > div > div:nth-child(3){
+    display: none !important;
+}
+
+.gm-style .gm-style-cc span, .gm-style .gm-style-cc a, .gm-style .gm-style-mtc div {
+    display: none !important;
+}
+
+//**************************** item ****************************
+.main-item-image{
+    width: 100%;
+    height: 333px;
+    object-fit: cover;
+}
+
+.btn-back-content-item{
+    //height: 75px;
+    position: fixed;
+    margin-top: 22px;
+    margin-left: 15px;
+    z-index: 9999;
+    //text-align: center;
+}
+
+.btn-back-content-item-ios{
+    margin-top: 26px;
+}
+
+.btn-back-item{
+    display: inline-block;
+    border-radius: 60px;
+    //box-shadow: 0px 0px 2px rgba(255,255,255,0.8);
+    //padding: 3px 3px;
+    //width: 21px;
+    font-size: 22px;
+    height: 32px;
+    width: 32px;
+    padding-top: 5px;
+    padding-left: 8px;
+    //background: rgba(255,255,255,0.8);
+    color: white;
+    // text-shadow: -2px 0 rgb(187, 187, 187), 0 2px rgb(187, 187, 187), 2px 0 rgb(187, 187, 187), 0 -2px rgb(187, 187, 187);
+    background: rgba(255, 255, 255,0.2);
+}
+
+.btn-back-black{
+    display: inline-block;
+    border-radius: 60px;
+    //box-shadow: 0px 0px 2px rgba(255,255,255,0.8);
+    //padding: 3px 3px;
+    //width: 21px;
+    font-size: 25px;
+    height: 32px;
+    width: 32px;
+    padding-top: 6px;
+    padding-left: 8px;
+    //background: rgba(255,255,255,0.8);
+    color: black;
+}
+
+.icon-item{
+    margin-right: 10px;
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+.title-item{
+    font-size: 16px;
+}
+
+.margin-last-table{
+    margin-bottom: 70px;
+}
+
+//**************************** profile **************************************
+
+.profile-img{
+    border-radius: 60px;
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+}
+
+.icon-remove:before {
+    content: "\f00d";
+}
+
+.bg-background {
+    height: 26px;
+    width: 26px;
+    background: url('assets/img/sprite-img.png');
+    display: inline-block;
+    background-size: cover;
+}
+
+.sliders-tab {
+    background-position: 0px 533px;
+}
+.menu-tab {
+    background-position: 0px 386px;
+}
+.plus-tab {
+    background-position: 0px 350px;
+}
+.bell-tab {
+    background-position: 0px 307px  ;
+}
+.search-tab {
+    background-position: 0px 266px;
+}
+.search-d-tab {
+    background-position: 0px -215px;
+}
+.map-marker-tab{
+    background-position: 0px 187px;
+    margin-right: 12px;
+}
+
+.tab-selected .menu-tab {
+    background-position: 0px 118px;
+}
+.tab-selected .bell-tab {
+    background-position: 0px 80px;
+}
+.tab-selected .search-tab {
+    background-position: 0px 40px;
+}
+
+//**************************** plan group card **************************************

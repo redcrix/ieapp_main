@@ -1,0 +1,199 @@
+<ion-content>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col *ngIf="showArrow == true" class="row-back" size="1">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </ion-col>
+      <ion-col size="{{searchbarSize}}">
+        <ion-searchbar (keyup)="kuSearch($event)" class="searchbar" mode="ios" showCancelButton="focus"
+          (ionFocus)="onFocus($event)" (ionClear)="onClear($event)" (ionCancel)="onCancel($event)">
+        </ion-searchbar>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <ng-scrollbar *ngIf="showRecent != true" [trackX]="true" [trackY]="false">
+          <div style="width: 700px" class="scroll-content">
+            <div>
+              <ion-chip (click)="getAll()" [ngClass]="{'chip-active':selectAll}" class="chip-pasive" color="primary">
+                <ion-label>{{ 'search.all' | translate }}</ion-label>
+              </ion-chip>
+              <ion-chip (click)="getPeople()" [ngClass]="{'chip-active':selectPeople}" class="chip-pasive"
+                color="primary">
+                <ion-label>{{ 'search.people' | translate }}</ion-label>
+              </ion-chip>
+              <ion-chip (click)="getStudentPlan()" [ngClass]="{'chip-active':selectStudentPlan}" class="chip-pasive"
+                color="primary">
+                <ion-label>{{ 'search.studentPlan' | translate }}</ion-label>
+              </ion-chip>
+              <ion-chip (click)="getEvents()" [ngClass]="{'chip-active':selectEvents}" class="chip-pasive"
+                color="primary">
+                <ion-label>{{ 'search.events' | translate }}</ion-label>
+              </ion-chip>
+              <ion-chip (click)="getOfferDiscount()" [ngClass]="{'chip-active':selectOfferDiscount}" class="chip-pasive"
+                color="primary">
+                <ion-label>{{ 'search.offersAndDiscount' | translate }}</ion-label>
+              </ion-chip>
+            </div>
+          </div>
+        </ng-scrollbar>
+
+        <!--RECENT SEARCHES-->
+        <div *ngIf="showRecent == true">
+          <div class="title-search">
+            {{ 'search.recentSearches' | translate }}
+          </div>
+          <div *ngFor="let item of recentList.reverse()" class="box-search-item">
+            <ion-row>
+              <ion-col size="10">
+                <ion-item lines="none">
+                  <ion-avatar slot="start">
+                    <img src="{{item?.image}}">
+                  </ion-avatar>
+                  <ion-label>
+                    <h2>{{item?.name}}</h2>
+                    <p>{{item?.city}}</p>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col class="column-center" size="2">
+                <div class="row-search-recent">
+                  <ion-icon name="ios-arrow-forward"></ion-icon>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+        <!--SEARCH-->
+        <!--PEOPLE-->
+        <div *ngIf="showRecent != true">
+          <div *ngIf="selectAll == true || selectPeople == true">
+            <div class="title-search">
+              {{ 'search.peopleCL' | translate }}
+            </div>
+            <div (click)="goToPeople(item)" *ngFor="let item of getListPeople; let i = index;" class="box-search-item">
+              <ion-row>
+                <ion-col class="column-left" size="10">
+                  <ion-item lines="none">
+                    <ion-avatar slot="start">
+                      <img src="{{item?.image}}">
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>{{item?.name}}</h2>
+                      <p>{{item?.city}}</p>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col class="column-center" size="2">
+                  <div class="row-search-recent">
+                    <ion-icon name="ios-arrow-forward"></ion-icon>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+            <div class="toggle-hide-all">
+              <span (click)="getDataByToggle('people')">{{seeAll.people ? 'Hide All' : 'See All'}}</span>
+            </div>
+          </div>
+          <hr *ngIf="selectAll == true" class="hr-search">
+          <!--STUDENT PLANS-->
+          <div *ngIf="selectAll == true || selectStudentPlan == true">
+            <div class="title-search">
+              {{ 'search.studentPlans' | translate }}
+            </div>
+            <div (click)="goToStudentPlan(item)" *ngFor="let item of getListStudentPlan" class="box-search-item">
+              <ion-row>
+                <ion-col class="column-left" size="10">
+                  <ion-item lines="none">
+                    <ion-avatar slot="start">
+                      <img src="{{item?.image}}">
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>{{item?.name}}</h2>
+                      <p>{{item?.city}}</p>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col class="column-center" size="2">
+                  <div class="row-search-recent">
+                    <ion-icon name="ios-arrow-forward"></ion-icon>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+            <div class="toggle-hide-all">
+              <span (click)="getDataByToggle('student_plan')">{{seeAll.student_plan ? 'Hide All' : 'See All'}}</span>
+            </div>
+          </div>
+
+          <hr *ngIf="selectAll == true" class="hr-search">
+          <!--EVENTS-->
+          <div *ngIf="selectAll == true || selectEvents == true">
+            <div class="title-search">
+              {{ 'search.eventsCL' | translate }}
+            </div>
+            <div (click)="goToEvent(item)" *ngFor="let item of getListEvent" class="box-search-item">
+              <ion-row>
+                <ion-col class="column-left" size="10">
+                  <ion-item lines="none">
+                    <ion-avatar slot="start">
+                      <img src="{{item?.eventPhoto}}">
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>{{item?.title}}</h2>
+                      <p>{{item?.address}}</p>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col class="column-center" size="2">
+                  <div class="row-search-recent">
+                    <ion-icon name="ios-arrow-forward"></ion-icon>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+            <div class="toggle-hide-all">
+              <span (click)="getDataByToggle('events')">{{seeAll.events ? 'Hide All' : 'See All'}}</span>
+            </div>
+          </div>
+          <hr *ngIf="selectAll == true" class="hr-search">
+          <!--OFFERS & DISCOUNT-->
+          <div *ngIf="selectAll == true || selectOfferDiscount == true">
+            <div class="title-search">
+              {{ 'search.offersAndDiscountCL' | translate }}
+            </div>
+            <div (click)="goToOfferDiscount(item)" *ngFor="let item of getListOfferDiscount" class="box-search-item">
+              <ion-row>
+                <ion-col class="column-left" size="10">
+                  <ion-item lines="none">
+                    <ion-avatar slot="start">
+                      <img src="{{item?.image}}">
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>{{item?.name}}</h2>
+                      <p>{{item?.city}}</p>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col class="column-center" size="2">
+                  <div class="row-search-recent">
+                    <ion-icon name="ios-arrow-forward"></ion-icon>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+            <div class="toggle-hide-all">
+              <span (click)="getDataByToggle('discount')">{{seeAll.discount ? 'Hide All' : 'See All'}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

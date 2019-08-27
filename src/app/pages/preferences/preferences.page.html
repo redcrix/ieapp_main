@@ -1,0 +1,41 @@
+<ion-content>
+  <toolbar *ngIf="showTitle == true" [back]="true"></toolbar>
+  <toolbar *ngIf="showTitle == null" title="{{ 'preferences.preferences' | translate }}" [back]="true"  [reset]="true"  (resetEmit)="resetFilter($event)"></toolbar>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div *ngIf="showText != true" class="preferences-top"></div>
+        <h1 *ngIf="showTitle == true" class="title">{{ 'preferences.preferences' | translate }}</h1>
+        <div *ngIf="showText == true" class="secondary-text">
+          {{ 'preferences.explanation' | translate }}
+        </div>
+        <form>
+          <ion-list lines="none">
+              <ion-item  (click)="selectAllItem()">
+                  <ion-label *ngIf="_globalServ?.language == 'es'">All</ion-label>
+                  <ion-label *ngIf="_globalServ?.language == 'en'">All</ion-label>
+                  <ion-checkbox [checked]="item?.checked == true" slot="end"></ion-checkbox>
+                </ion-item>
+            <ion-item *ngFor="let item of getSupercategories;let i = index" (click)="changeStatus(item,i)">
+              <ion-label *ngIf="_globalServ?.language == 'es'">{{item?.name_ES}}</ion-label>
+              <ion-label *ngIf="_globalServ?.language == 'en'">{{item?.name_EN}}</ion-label>
+              <ion-checkbox [checked]="item?.checked == true" slot="end"></ion-checkbox>
+            </ion-item>
+            <div class="box-center-full">
+              <ion-button *ngIf="save == true" (click)="saveFirstTime()" class="button-one" shape="round">
+                <span *ngIf="fromSetting != true">{{ 'preferences.saveAndContinue' | translate }}</span>
+                <span *ngIf="fromSetting == true">{{ 'preferences.save' | translate }}</span>
+              </ion-button>
+              <ion-button *ngIf="selectBtn == true" (click)="select()" class="button-one" shape="round">
+                <span>Select</span>
+              </ion-button>
+            </div>
+          </ion-list>
+        </form>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

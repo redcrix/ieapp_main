@@ -1,0 +1,26 @@
+<ion-toolbar [ngClass]="{'toolbarWithSearch': searchMembers || searchGroups}">
+  <ion-row>
+    <ion-col class="column-left" size="4">
+      <span (click)="goBack()" *ngIf="back == true" class="fas fa-chevron-left"></span>
+      <span (click)="closeModalArrowFunc()" *ngIf="closeModalArrow == true" class="fas fa-chevron-left"></span>
+      <span (click)="close()" *ngIf="cancel == true" class="cancel">{{ 'toolbar.cancel' | translate }}</span>
+      <span (click)="goBack()" *ngIf="cancelMembers == true" class="members-nav blue-text">{{ 'toolbar.cancel' | translate }}</span>
+      <span *ngIf="menu == true" class="fas fa-bars"></span>
+    </ion-col>
+    <ion-col class="column-center" size="4">
+      <span *ngIf="title != null">{{title}}</span>
+    </ion-col>
+    <ion-col class="column-right" size="4">
+      <span (click)="goToOfferDiscountMap()" *ngIf="map == true" class="bg-background map-marker-tab icon-right"></span>
+      <span (click)="goToSetting()" *ngIf="setting == true" class="bg-background sliders-tab icon-right"></span>
+      <span *ngIf="search == true" class="fas fa-search icon-right"></span>
+      <span *ngIf="bell == true" class="fas fa-bell icon-right"></span>
+      <span (click)="resetFunc()" *ngIf="reset == true" class="blue-text">{{ 'toolbar.reset' | translate }}</span>
+      <span (click)="inviteMember()" *ngIf="inviteMembers == true" class="members-nav blue-text">{{ 'toolbar.invite' | translate }}</span>
+    </ion-col>
+    <ion-col *ngIf="searchMembers == true || searchGroups == true" size="12">
+      <ion-searchbar placeholder="{{searchMembers === true ? 'Search people' : 'Search group name'}}" [(ngModel)]="groupMemberKey" (ionChange)="changeSearchGroupMembers()"></ion-searchbar>
+    </ion-col>
+  </ion-row>
+</ion-toolbar>
+<div class="separator"></div>

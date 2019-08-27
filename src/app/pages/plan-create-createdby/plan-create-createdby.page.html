@@ -1,0 +1,27 @@
+<ion-content>
+  <toolbar
+    [title]="'plan-create.createBy' | translate"
+    [back]="true"
+  >
+  </toolbar>
+  <div class="container settings-screen">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <ion-radio-group allow-empty-selection [(ngModel)]="planCreateCreatedbyValue">
+          <ion-item class="checkbox-item" lines="none" *ngFor="let item of planCreateCreatedby; let i = index" (click)="changeStatus(i, $event)">
+            <ion-label>{{item.name}}</ion-label>
+            <ion-radio [ngClass]="{'checked': item.id === planCreateCreatedbyValue}" [value]="item.id" [checked]="item.id === planCreateCreatedbyValue" slot="end"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+        <ion-item lines="none" (click)="goToGroupOptions()">
+          <label style="font-size: 17px;" position="fixed">{{ 'plan-create.groupGroupPlan' | translate }}</label>
+          <span slot="end" style="font-size: 17px;" class="secondary-text">
+            {{ 'plan-create.pick' | translate }} <span class="fas fa-chevron-right"></span>
+          </span>
+        </ion-item>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

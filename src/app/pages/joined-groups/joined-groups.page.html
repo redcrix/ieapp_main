@@ -1,0 +1,30 @@
+<ion-content>
+  <toolbar [back]="true" title="{{('profile.joined' | translate) + ' ' + ('joined.groups' | translate)}}"></toolbar>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div style="margin-top: 40pt;"></div>
+        
+        <div class="j-card-row">
+          <div class="text-center j-card" *ngFor="let jGroup of joinedGroups; let i=index" (click)="goToGroupDetail(jGroup)">
+            <img src="{{jGroup?.image}}" />
+            <h5 class="title">{{jGroup?.title}}</h5>
+            <div class="icon-status">
+              <ion-icon name="ios-person"></ion-icon>
+              <span class="status">{{jGroup?.members_count}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-center-full btn-pc-box">
+          <ion-button (click)="goToGroups()" class="button-one" shape="round">
+            <span>{{ 'joined.viewAllGroups' | translate }}</span>
+          </ion-button>
+        </div>
+        
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

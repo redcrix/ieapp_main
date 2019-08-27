@@ -1,0 +1,128 @@
+<ion-content>
+  <div class="btn-back-content-item" [ngClass]="{'btn-back-content-item-ios':_globalServ?.iosDivice}">
+    <span (click)="goBack()" class="btn-back-black fas fa-chevron-left"></span>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="box-center-full top-image-vp">
+          <div *ngIf="publicProfile.image != null" class="image-camera-more">
+            <img src="{{publicProfile.image}}" />
+          </div>
+          <div *ngIf="publicProfile.image == null" class="circle image-camera-more">
+            <span class="icon fas fa-camera"></span>
+          </div>
+          <div class="vp-name">{{publicProfile.first_name}} {{publicProfile.last_name}}</div>
+          <div class="vp-view-carrer">{{publicProfile.faculty}}</div>
+        </div>
+        <div class="box-center-full box-number-vp">
+          <div class="box-data-vp">
+            <span class="data-circle-vp">{{publicProfile.preferences}}</span>
+            <div class="data-text-vp">{{ 'view-profile.preferences' | translate }}</div>
+          </div>
+          <div class="box-data-vp">
+            <span class="data-circle-vp">{{publicProfile.clubs}}</span>
+            <div class="data-text-vp">{{ 'view-profile.clubs' | translate }}</div>
+          </div>
+          <div class="box-data-vp">
+            <span class="data-circle-vp">{{publicProfile.groups}}</span>
+            <div class="data-text-vp">{{ 'view-profile.groups' | translate }}</div>
+          </div>
+        </div>
+
+        <hr class="hr-view-profile">
+
+        <div class="box-center-full">
+          <div class="box-blue-circle">
+            <span class="blue-circle icon-blue fas fa-envelope"></span>
+            <div class="blue-text">{{ 'view-profile.email' | translate }}</div>
+          </div>
+          <div class="box-blue-circle">
+            <span class="separate-blue-circle"></span>
+          </div>
+          <div class="box-blue-circle">
+            <span class="blue-circle icon-blue fab fa-instagram"></span>
+            <div class="blue-text">{{ 'view-profile.instagram' | translate }}</div>
+          </div>
+        </div>
+
+        <div class="vp-personal-inf">
+          {{ 'view-profile.personalInformation' | translate }}
+        </div>
+
+        <div class="vp-box-icon-text">
+          <ion-icon class="vp-icon" name="ios-home"></ion-icon> <span class="vp-item-text"><span
+              class="secondary-text vp-margin-icon">{{ 'view-profile.from' | translate }}</span> <span
+              style="margin-left: 6pt;">{{publicProfile.from}}</span></span>
+        </div>
+
+        <div style="margin-bottom: 28pt;" class="vp-box-icon-text vp-box-two">
+          <span class="vp-icon fas fa-birthday-cake"></span> <span class="vp-item-text"><span
+              class="secondary-text vp-margin-icon ">{{ 'view-profile.birthdayOn' | translate }}</span> <span
+              style="margin-left: 6pt;">{{publicProfile.birthday | date:'d MMM'}}</span></span>
+        </div>
+
+        <ion-row>
+          <ion-col class="weight-600" size="6">joes's {{ 'view-profile.plans' | translate }}</ion-col>
+          <ion-col class="secondary-text view-all" size="6" (click)="goToPlans()">{{ 'view-profile.viewAll' | translate }}</ion-col>
+        </ion-row>
+
+        <ion-slides style="width: 100%;" [pager]="true">
+          <ion-slide style="width: 100%;" *ngFor="let plan of plans; let i = index">
+            <plan-card [dataPlan]="plan" style="width: 100%;"></plan-card>
+          </ion-slide>
+        </ion-slides>
+
+        <ion-row style="margin-top: 22pt;width: 100%">
+          <ion-col class="weight-600" size="6">joe's {{ 'view-profile.clubs' | translate }}</ion-col>
+          <ion-col class="secondary-text view-all" size="6">{{ 'view-profile.viewAll' | translate }}</ion-col>
+        </ion-row>
+
+
+        <div class="box-container">
+          <div class="item" *ngFor="let club of clubs; let i = index">
+            <ion-card>
+              <img src="{{club.image}}">
+            </ion-card>
+            <div
+              style="line-height: 20px; text-align: center;" [ngClass]="{'vp-ios-text-card':_globalServ?.iosDivice}">
+              {{club.title}}
+            </div>
+            <div class="box-center-full">
+              <div class="secondary-text">
+                <ion-icon class="vp-icon" name="ios-person"></ion-icon> <span class="vp-item-text">{{club.club_member_count}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <ion-row style="padding-top: 22pt;width: 100%">
+          <ion-col class="weight-600" size="6">joe's {{ 'view-profile.groups' | translate }}</ion-col>
+          <ion-col class="secondary-text view-all" size="6" (click)="goToGroups()">{{ 'view-profile.viewAll' | translate }}</ion-col>
+        </ion-row>
+
+
+        <div class="box-container">
+          <div class="item" *ngFor="let group of groups; let i = index">
+            <ion-card>
+              <img src="{{group.image}}">
+            </ion-card>
+            <div
+              style="line-height: 20px; text-align: center;" [ngClass]="{'vp-ios-text-card':_globalServ?.iosDivice}">
+              {{group.title}}
+            </div>
+            <div class="box-center-full">
+              <div class="secondary-text">
+                <ion-icon class="vp-icon" name="ios-person"></ion-icon> <span class="vp-item-text">{{group.group_members_count}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    <div style="margin-top: 100px;"></div>
+  </div>
+</ion-content>

@@ -1,0 +1,66 @@
+<ion-content
+  [scrollEvents]="true"
+  (ionScrollStart)="logScrollStart()"
+  (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()"
+>
+  <toolbar [title]="showFixedHeader() ? getFixedHeaderTitle() : ''" [back]="true"></toolbar>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <h1 class="title">{{ 'clubs.clubs' | translate }}</h1>
+      </div>
+      <div class="col-md-12">
+        <div class="all-club-header">
+          <h4 class="title">{{ 'clubs.recommendedClubs' | translate }}</h4>
+          <span class="view-all" (click)="isViewAllForRecommend = !isViewAllForRecommend">
+            {{isViewAllForRecommend ? ('clubs.hideAll' | translate) : ('clubs.viewAll' | translate)}}
+          </span>
+        </div>
+        <div class="club-card-row" *ngIf="recommendedClubs.length !== 0">
+          <div class="text-center club-card" *ngFor="let rClub of recommendedClubs; let i=index" (click)="goToClubDetail(rClub)">
+            <div *ngIf="i < getNumberOfLimitForClubs('recommendedClubs')">
+              <img src="{{rClub?.image}}" />
+              <h5 class="title">{{rClub?.title}}</h5>
+              <div class="icon-status">
+                <ion-icon name="ios-person"></ion-icon>
+                <span class="status">{{rClub?.club_member_count}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="club-card-row" *ngIf="recommendedClubs.length === 0">
+          <div class="empty-text">
+            {{ 'clubs.noClubs' | translate }}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="all-club-header">
+          <h4 class="title">{{ 'clubs.yourClubs' | translate }}</h4>
+          <span class="view-all" (click)="isViewAllForClubs = !isViewAllForClubs">
+            {{isViewAllForClubs ? ('clubs.hideAll' | translate) : ('clubs.viewAll' | translate)}}
+          </span>
+        </div>
+        <div class="club-card-row" *ngIf="allClubs.length !== 0">
+          <div class="text-center club-card" *ngFor="let allClub of allClubs; let i=index" (click)="goToClubDetail(allClub)">
+            <div *ngIf="i < getNumberOfLimitForClubs('clubs')">
+              <img src="{{allClub?.image}}" />
+              <h5 class="title">{{allClub?.title}}</h5>
+              <div class="icon-status">
+                <ion-icon name="ios-person"></ion-icon>
+                <span class="status">{{allClub?.club_member_count}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="club-card-row" *ngIf="allClubs.length === 0">
+          <div class="empty-text">
+            {{ 'clubs.noClubs' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</ion-content>

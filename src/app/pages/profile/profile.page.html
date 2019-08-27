@@ -1,0 +1,103 @@
+<ion-content 
+[scrollEvents]="true"
+(ionScroll)="logScrolling($event)">
+<toolbar *ngIf="profileBool == true" [back]="true" [title]="pageTitleName ? ('profile.profile' | translate) : ''"></toolbar>
+<toolbar *ngIf="settingBool == true" [back]="true" [title]="pageTitleName ? ('profile.setting' | translate) : ''"></toolbar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1 *ngIf="profileBool == true" class="title">{{ 'profile.profile' | translate }}</h1>
+      <h1 *ngIf="settingBool == true" class="title">{{ 'profile.setting' | translate }}</h1>
+      <hr class="hr-profile" *ngIf="settingBool == true">
+      <form class="form-field">
+        <div class="box-center-full">
+          <span *ngIf="_globalServ?.profileImagePath == null && image == null" (click)="goToUpload()"
+          class="circle"><span class="icon fas fa-camera"></span></span>
+          <img *ngIf="_globalServ?.profileImagePath != null" (click)="goToUpload()" class="profile-img"
+          [src]="_globalServ?.profileImagePath">
+          <img *ngIf="_globalServ?.profileImagePath == null && image != null" (click)="goToUpload()"
+          class="profile-img" src="{{url}}/{{image}}">
+        </div>
+
+        <ion-item lines="none">
+          <ion-label position="fixed">{{ 'profile.name' | translate }}</ion-label>
+          <ion-input [(ngModel)]="firstName" [formControl]="myForm.get('firstName')" class="input-one"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label position="fixed">{{ 'profile.lastName' | translate }}</ion-label>
+          <ion-input [value]="lastName" [formControl]="myForm.get('lastName')" class="input-one"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label position="fixed">{{ 'profile.city' | translate }}</ion-label>
+          <ion-input [value]="city" [formControl]="myForm.get('city')" class="input-one"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label position="fixed">{{ 'profile.faculty' | translate }}</ion-label>
+          <ion-input [value]="faculty" [formControl]="myForm.get('faculty')" class="input-one"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label position="fixed">{{ 'profile.from' | translate }}</ion-label>
+          <ion-input [value]="from" [formControl]="myForm.get('from')" class="input-one"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label position="fixed">{{ 'profile.birthday' | translate }}</ion-label>
+          <ion-datetime [formControl]="myForm.get('birthday')" [value]="birthday" display-format="DD/MM/YYYY"
+          class=""></ion-datetime>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label position="fixed">{{ 'profile.emailAddress' | translate }}</ion-label>
+          <ion-input readonly [value]="userName" [formControl]="myForm.get('userName')" class="input-one">
+          </ion-input>
+        </ion-item>
+        <ion-item lines="none" (click)="openLanguageModal()">
+          <ion-label position="fixed">{{ 'profile.language' | translate }}</ion-label>
+          <span slot="end" class="secondary-text">
+            <span *ngIf="_globalServ.language == 'en'">{{ 'profile.english' | translate }}</span>
+            <span *ngIf="_globalServ.language == 'es'">{{ 'profile.spanish' | translate }}</span>
+          </span>
+        </ion-item>
+        <hr class="hr-profile" *ngIf="settingBool == true">
+        <ion-item lines="none">
+          <label position="fixed">{{ 'profile.instagram' | translate }}</label>
+          <!-- <ion-chip slot="end" class="chip-active chip-inst" color="primary">
+            <ion-label>{{ 'profile.connect' | translate }}</ion-label>
+          </ion-chip> -->
+        </ion-item>
+
+        <ion-item (click)="goToJoined()" *ngIf="settingBool == true" lines="none">
+          <label position="fixed">{{ 'profile.joined' | translate }}</label>
+          <span slot="end" style="font-size: 17pt;" class="fas fa-chevron-right secondary-text"></span>
+        </ion-item>
+
+        <ion-item (click)="goToPreferences()" *ngIf="settingBool == true" lines="none">
+          <label position="fixed">{{ 'profile.preferences' | translate }}</label>
+          <span slot="end" style="font-size: 17pt;" class="fas fa-chevron-right secondary-text"></span>
+        </ion-item>
+
+          <!--
+          <ion-item *ngIf="settingBool == true" lines="none">
+            <label position="fixed">{{ 'profile.permissions' | translate }}</label>
+            <span slot="end" style="font-size: 17pt;" class="fas fa-chevron-right secondary-text"></span>
+          </ion-item>
+        -->
+
+        <!-- <ion-item (click)="goToPassword()" *ngIf="settingBool == true" lines="none">
+          <label position="fixed">{{ 'profile.changePassword' | translate }}</label>
+          <span slot="end" style="font-size: 17pt;" class="fas fa-chevron-right secondary-text"></span>
+        </ion-item> -->
+
+        <hr class="hr-profile" *ngIf="settingBool == true">
+        <div class="box-center-full">
+          <!-- <ion-button (click)="save(myForm.value)" type="submit" class="button-one" shape="round"> -->
+            <!-- <span *ngIf="profileBool == true">{{ 'profile.continue' | translate }}</span>
+              <span *ngIf="settingBool == true">{{ 'profile.save' | translate }}</span> -->
+              <!-- </ion-button> -->
+            </div>
+          </form>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </ion-content>

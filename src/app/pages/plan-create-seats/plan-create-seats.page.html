@@ -1,0 +1,18 @@
+<ion-content>
+  <toolbar
+    [title]="'plan-create.avalibleSeats' | translate"
+    [back]="true"
+  >
+  </toolbar>
+  <div class="container settings-screen">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <ion-item-divider mode="md">
+          <ion-input [(ngModel)]="PlanCreateSeatsValue" type="number" (input)="seatValueChanged($event.target.value)" placeholder="{{ 'plan-create.avalibleSeats' | translate }}"></ion-input>
+        </ion-item-divider>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

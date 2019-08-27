@@ -1,0 +1,72 @@
+.title {
+    padding: 15px 15px;
+    background: white;
+}
+
+.graybg {
+    background: #f9f9f9;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.box-center-full {
+    background: white;
+    padding: 30px 15px;
+}
+
+.hr-pc{
+    width: 1500px !important;
+    background: rgb(224, 224, 224) !important;
+    display: block !important;
+    margin-left: -400px; 
+    visibility: visible !important;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.mbottom {
+    margin-bottom: 15px;
+}
+
+.mtop {
+    margin-top: 15px;
+}
+
+
+.pc-margin-top{
+    margin-top: 34pt;
+    margin-bottom: 20pt;
+}
+
+ion-input{
+    font-size: 17pt;
+}
+
+ion-textarea{
+    font-size: 17pt;
+    color: rgb(200, 199, 204);
+    background: white;
+    padding: 0px 15px;
+}
+
+.btn-pc-box{
+    margin-top: 32pt;
+    margin-bottom: 36pt;
+    background: none !important;
+}
+
+.line-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: white;
+
+    & label {
+        margin-right: 30px;
+    }
+    & .secondary-text {
+        text-align: right;
+    }
+}

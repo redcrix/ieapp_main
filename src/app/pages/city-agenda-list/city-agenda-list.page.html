@@ -1,0 +1,20 @@
+<ion-content 
+[scrollEvents]="true"
+(ionScroll)="logScrolling($event)">
+<toolbar [setting]="true" [title]="pageTitleName ? ('city-agenda-list.cityAgenda' | translate) : ''"></toolbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1 class="title">{{ 'city-agenda-list.cityAgenda' | translate }}</h1>
+      <div *ngIf="!_globalServ?.listCityAgenda?.events" class="spinner-div">
+        <ion-spinner name="lines"></ion-spinner>
+      </div>
+      <div *ngIf="_globalServ?.listCityAgenda?.events">
+        <city-agenda-card *ngFor="let item of _globalServ?.listCityAgenda?.events" [dataCAItem]="item"></city-agenda-card>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-card (click)="goToCityAgendaItem(dataCAItem)">
+  <img src="{{dataCAItem?.image}}">
+  <ion-card-header>
+    <ion-card-subtitle
+      style=" text-align: left;display: -webkit-box;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;height: 17px;">
+      {{dataCAItem?.valid_until | date:'medium'}}
+    </ion-card-subtitle>
+    <ion-card-title
+      style=" text-align: left;display: -webkit-box;max-width: 100%;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;font-size: 18pt;">
+      {{dataCAItem?.name_EN}}
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="weight-600 title-box-c-a">
+      <span class="fas fa-map-marker-alt"></span> Teatro, Madrid
+    </div>
+    <div class="two-line-one">
+      {{dataCAItem?.description_EN  | slice:0:150}}...Read more 
+    </div>
+  </ion-card-content>
+</ion-card>

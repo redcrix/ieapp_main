@@ -1,0 +1,178 @@
+<ion-content>
+  <div class="btn-back-content-item" [ngClass]="{'btn-back-content-item-ios':_globalServ?.iosDivice}">
+    <span (click)="goBack()" class="btn-back-item fas fa-chevron-left"></span>
+  </div>
+  <div>
+    <img class="main-item-image" src="{{url}}/get-image/{{getItem?.article?.image}}">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+
+        <div class="item-title">
+          <h2>
+            <span *ngIf="_globalServ?.language == 'en'">{{getItem?.article?.name_EN}}</span>
+            <span *ngIf="_globalServ?.language == 'es'">{{getItem?.article?.name_ES}}</span>
+          </h2>
+        </div>
+
+        <div class="box-center-full four-icons">
+          <div class="box-blue-circle" (click)="goToSite()">
+            <img width="48px" height="48px" src="assets/img/website.png">
+            <div class="blue-text">{{ 'city-guide-item.Website' | translate }}</div>
+          </div>
+          <div class="box-blue-circle" (click)="callWithNumber()">
+            <img width="48px" height="48px" src="assets/img/call.png">
+            <div class="blue-text">{{ 'city-guide-item.Call' | translate }}</div>
+          </div>
+          <div class="box-blue-circle">
+            <img width="48px" height="48px" src="assets/img/direction.png">
+            <div class="blue-text">{{ 'city-guide-item.Directions' | translate }}</div>
+          </div>
+          <div class="box-blue-circle" (click)="goToCreatePlan()">
+            <img width="48px" height="48px" src="assets/img/plan.png">
+            <div class="blue-text">{{ 'city-guide-item.createPlan' | translate }}</div>
+          </div>
+        </div>
+
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="information-circle"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'city-guide-item.details' | translate }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="secondary-text">
+              <span *ngIf="_globalServ?.language == 'en' && (truncating && getItem?.article?.description_EN.length > limit)">{{getItem?.article?.description_EN | truncate : limit}}</span>
+              <span *ngIf="_globalServ?.language == 'es' && (truncating && getItem?.article?.description_ES.length > limit)">{{getItem?.article?.description_ES | truncate : limit}}</span>
+
+              <span *ngIf="_globalServ?.language == 'en' && (!truncating && getItem?.article?.description_EN.length > limit)">{{getItem?.article?.description_EN}}</span>
+              <span *ngIf="_globalServ?.language == 'es' && (!truncating && getItem?.article?.description_ES.length > limit)">{{getItem?.article?.description_ES}}</span>
+            </td>
+          </tr>
+          <tr *ngIf="truncating">
+            <td></td>
+            <td class="blue-text size-18-pt" (click)="truncating = false">{{ 'city-guide-item.readMore' | translate }}</td>
+          </tr>
+        </table>
+
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="clock"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'city-guide-item.openingHours' | translate }}</td>
+          </tr>
+          <tr *ngFor="let item of getItem?.article?.Places" class="secondary-text weight-600">
+            <td></td>
+            <td *ngIf="_globalServ?.language == 'en'">{{item?.hours_EN}} <span *ngIf="item?.hours_EN != ''">({{item?.name_EN}})</span></td>
+            <td *ngIf="_globalServ?.language == 'es'">{{item?.hours_ES}} <span *ngIf="item?.hours_ES != ''">({{item?.name_ES}})</span></td>
+          </tr>
+          <tr>
+            <!--<tr class="secondary-text">
+            <td></td>
+            <td>10:00 - 11:00</td>
+          </tr>
+          <tr class="secondary-text weight-600">
+            <td></td>
+            <td>Sunday</td>
+          </tr>
+          <tr class="secondary-text">
+            <td></td>
+            <td>Closed</td>
+          </tr>-->
+        </table>
+
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="pin"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'city-guide-item.location' | translate }}</td>
+          </tr>
+          <tbody *ngFor="let item of getItem?.article?.Places">
+            <tr class="secondary-text">
+              <td></td>
+              <td *ngIf="_globalServ?.language == 'en'">{{item?.name_EN}}</td>
+              <td *ngIf="_globalServ?.language == 'es'">{{item?.name_ES}}</td>
+            </tr>
+            <tr>
+              <tr class="secondary-text">
+                <td></td>
+                <td>{{item?.street}} {{item?.number}}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <ion-chip class="btn-blue-general">
+                    <ion-label>{{ 'city-guide-item.Website' | translate }}</ion-label>
+                  </ion-chip>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="box-map-one">
+            <div id="map" class="map-one" #map></div>
+          </div>
+
+          <table>
+            <tr class="weight-600">
+              <td>
+                <ion-icon class="icon-item" name="ios-bus"></ion-icon>
+              </td>
+              <td class="title-item">{{ 'city-guide-item.howToGetThere' | translate }}</td>
+            </tr>
+            <tr class="secondary-text weight-600">
+              <td></td>
+              <td>{{ 'city-guide-item.bus' | translate }}</td>
+            </tr>
+            <tr *ngFor="let item of getItem?.article?.Places" class="secondary-text">
+              <td></td>
+              <td>{{item?.bus}} (<span *ngIf="_globalServ?.language == 'en'">{{item?.name_EN}}</span><span *ngIf="_globalServ?.language == 'es'">{{item?.name_ES}}</span>)</td>
+            </tr>
+            <tr class="secondary-text weight-600">
+              <td></td>
+              <td>{{ 'city-guide-item.metro' | translate }}</td>
+            </tr>
+            <tr *ngFor="let item of getItem?.article?.Places" class="secondary-text">
+              <td></td>
+              <td>{{item?.metro}} (<span *ngIf="_globalServ?.language == 'en'">{{item?.name_EN}}</span><span *ngIf="_globalServ?.language == 'es'">{{item?.name_ES}}</span>)</td>
+            </tr>
+          </table>
+
+          <table class="margin-last-table">
+            <tr class="weight-600">
+              <td>
+                <ion-icon class="icon-item" name="ios-share"></ion-icon>
+              </td>
+              <td class="title-item">{{ 'city-guide-item.share' | translate }}</td>
+            </tr>
+            <tr class="secondary-text">
+              <td></td>
+              <td>
+                <ion-chip class="btn-facebook">
+                  <ion-label>Facebook</ion-label>
+                </ion-chip>
+                <ion-chip class="btn-twitter">
+                  <ion-label>Twitter</ion-label>
+                </ion-chip>
+                <ion-chip class="btn-email">
+                  <ion-label>Email</ion-label>
+                </ion-chip>
+                <ion-chip class="btn-whatsapp">
+                  <ion-label>WhatsApp</ion-label>
+                </ion-chip>
+              </td>
+            </tr>
+            <tr>
+            </table>
+
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
+    </ion-content>

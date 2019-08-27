@@ -1,0 +1,60 @@
+<ion-content>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <h1 class="title">{{ 'more.more' | translate }}</h1>
+        <div class="box-center-full">
+          <div *ngIf="image == null && _globalServ.profileImagePath == null" (click)="goToViewProfile()"
+          class="circle image-camera-more">
+          <span class="icon fas fa-camera"></span>
+        </div>
+        <img *ngIf="image != null && _globalServ.profileImagePath == null" (click)="goToViewProfile()"
+        class="profile-img" src="{{url}}/{{image}}">
+        <img *ngIf="_globalServ.profileImagePath != null" (click)="goToViewProfile()" class="profile-img"
+        [src]="_globalServ.profileImagePath">
+        <div (click)="goToViewProfile()" class="more-name">{{firstName}} {{lastName}}</div>
+        <div (click)="goToViewProfile()" class="more-view-profile">{{ 'more.viewProfile' | translate }}</div>
+      </div>
+
+      <div class="content-more">
+        <div *ngIf="_globalServ?.org == 'CEU'" class="more-item first-more-item">
+          <div class="more-box-icon-text" (click)="goToClubs()">
+            <ion-icon class="more-icon" name="md-bicycle"></ion-icon> <span
+            class="more-item-text">{{ 'more.clubs' | translate }}</span>
+          </div>
+        </div>
+        <div class="more-item others-more-item">
+          <div class="more-box-icon-text" (click)="goToGroups()"> 
+            <ion-icon class="more-icon" name="ios-people"></ion-icon> <span
+            class="more-item-text">{{ 'more.groups' | translate }}</span>
+          </div>
+        </div>
+        <div class="more-item others-more-item">
+          <div class="more-box-icon-text" (click)="goToSetting()">
+            <ion-icon class="more-icon" name="ios-settings"></ion-icon> <span
+            class="more-item-text">{{ 'more.settings' | translate }}</span>
+          </div>
+        </div>
+        <div class="more-item others-more-item">
+          <div class="more-box-icon-text" (click)="goToAbout()">
+            <ion-icon class="more-icon" name="information-circle"></ion-icon> <span
+            class="more-item-text">{{ 'more.about' | translate }}</span>
+          </div>
+        </div>
+        <div class="more-item others-more-item">
+          <div class="more-box-icon-text" (click)="logout()">
+            <ion-icon class="more-icon" name="ios-log-out"></ion-icon> <span
+            class="more-item-text">{{ 'more.logOut' | translate }}</span>
+          </div>
+        </div>
+          <!--<div>
+            {{device.model}}
+          </div>-->
+        </div>
+        <div class="margin-bottom"></div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

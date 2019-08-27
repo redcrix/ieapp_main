@@ -1,0 +1,23 @@
+<ion-content>
+  <toolbar
+    [title]="'group-create-category.category' | translate"
+    [back]="true"
+  >
+  </toolbar>
+  <div class="category-heading">
+    <ion-item class="heading-txt" lines="none">{{'group-create-category.pickup3' | translate}}</ion-item>
+  </div>
+  <div class="container category-screen">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <ion-item lines="none" *ngFor="let item of groupCreateCategory; let i = index" (click)="changeStatus(i)">
+          <ion-label *ngIf="_globalServ?.language == 'es'">{{item?.name_ES}}</ion-label>
+          <ion-label *ngIf="_globalServ?.language == 'en'">{{item?.name_EN}}</ion-label>
+          <ion-checkbox [checked]="item?.value === 1" slot="end"></ion-checkbox>
+        </ion-item>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-content>
+    <toolbar [back]="true" title="{{firstName + ' Groups'}}"></toolbar>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div style="margin-top: 40pt;"></div>
+          
+          <div style="width: 100%;" *ngFor="let plan of plans; let i = index">
+            <plan-card [dataPlan]="plan" style="width: 100%;"></plan-card>
+          </div>
+   
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </ion-content>

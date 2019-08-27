@@ -1,0 +1,93 @@
+.hr-view-profile{
+    width: 150px !important;
+    background: rgb(224, 224, 224) !important;
+    display: block !important;
+    //margin-left: -400px; 
+    visibility: visible !important;
+}
+
+.top-image-vp{
+    margin-top: 88pt;
+}
+
+.vp-name{
+    font-size: 20pt;
+    margin-top: 20pt;
+    font-weight: 600;
+}
+
+.vp-view-carrer{
+    font-size: 12pt;
+    color: rgb(155, 155, 155);
+    margin-top: 7pt;
+}
+
+
+.box-number-vp{
+    margin-top: 56pt;
+}
+
+.vp-personal-inf{
+    color: black;
+    font-size: 16pt;
+    margin-top: 65pt;
+    margin-bottom: 24pt;
+    font-weight: 600;
+}
+
+
+.vp-box-icon-text{
+    width: fit-content;
+}
+
+.vp-item-text{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12pt;
+    margin-left: 10px;
+}
+
+.vp-icon{
+    font-size:18pt;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.vp-box-two{
+    margin-top: 16pt;
+}
+.view-all{
+    text-align: right;
+}
+
+.vp-margin-icon{
+    margin-left: 18pt;
+}
+
+
+.box-container .item{
+    float: left;
+    width: 33.3%;//helps to determine number of columns, for instance 33.3% displays 3 columns
+}
+.item{
+    list-style-type: disc;
+}
+
+.separate-blue-circle{
+    display: inline-block;border-radius: 60px;
+    height: 48pt;
+    width: 48pt;
+    margin-bottom: 10px;
+}
+
+.vp-ios-text-card{
+    margin-top: -20px;
+}
+
+.image-camera-more {
+    & img {
+        width: 138px;
+        height: 138px;
+        border-radius: 138px;
+    }
+}

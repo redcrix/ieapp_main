@@ -1,0 +1,28 @@
+.box-container .item{
+    float: left;
+    width: 33.3%;//helps to determine number of columns, for instance 33.3% displays 3 columns
+}
+.item{
+    list-style-type: disc;
+}
+
+.jc-item-text{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12pt;
+    margin-left: 10px;
+}
+
+.jc-icon{
+    font-size:18pt;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.joined-club-header {
+    text-align: right;
+    & .view-all {
+        color: #9b9b9b;
+        cursor: pointer;
+    }
+}

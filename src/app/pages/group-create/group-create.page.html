@@ -1,0 +1,62 @@
+<ion-content 
+[scrollEvents]="true"
+(ionScroll)="logScrolling($event)">
+<toolbar [back]="true" [title]="pageTitleName ? ('group-create.createaGroup' | translate) : ''"></toolbar>
+<div class="container nopadding">
+  <div class="row graybg">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1 class="title">{{ 'group-create.createaGroup' | translate }}</h1>
+      <hr class="hr-pc mtop">
+      <div class="box-center-full">
+        <span *ngIf="chosenImage === null" class="circle" (click)="goToUpload()">
+          <span class="icon fas fa-camera"></span>
+        </span>
+        <img *ngIf="chosenImage !== null" class="circle" [src]="chosenImage"/>
+      </div>
+      <hr class="hr-pc mbottom">
+      <form>
+
+        <ion-item-divider mode="md">
+          <ion-input [(ngModel)]="title" name="title" placeholder="{{ 'group-create.title' | translate }}"></ion-input>
+        </ion-item-divider>
+
+        <hr class="hr-pc mtop">
+        <div class="line-item">
+          <label style="font-size: 17pt;">{{ 'group-create.category' | translate }}</label>
+          <span style="font-size: 17pt;" class="secondary-text" (click)="createCategory()">
+            {{ 'group-create.pick' | translate }} <span class="fas fa-chevron-right"></span>
+          </span>
+        </div>
+
+        <div class="line-item">
+          <label style="font-size: 17pt;">{{ 'group-create.settings' | translate }}</label>
+          <span style="font-size: 17pt;" class="secondary-text" (click)="pickSettings()">
+            {{ groupCreateSettingsValue }} <span class="fas fa-chevron-right"></span>
+          </span>
+        </div>
+
+        <div class="line-item">
+          <label style="font-size: 17pt;">{{ 'group-create.invitePeople' | translate }}</label>
+          <span style="font-size: 17pt;" class="secondary-text" (click)="invitePeople()">
+            {{ 'group-create.invite' | translate }} <span class="fas fa-chevron-right"></span>
+          </span>
+        </div>
+        <hr class="hr-pc mbottom">
+        
+        <ion-textarea [(ngModel)]="description" name="description" placeholder="{{ 'group-create.details' | translate }}"></ion-textarea>
+        <hr class="hr-pc">
+
+        <div class="box-center-full btn-pc-box">
+          <ion-button (click)="save()" class="button-one" shape="round">
+            <span>{{ 'group-create.createTheGroup' | translate }}</span>
+          </ion-button>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+</ion-content>

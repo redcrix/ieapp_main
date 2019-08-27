@@ -1,0 +1,124 @@
+<ion-content>
+  <div class="btn-back-content-item" [ngClass]="{'btn-back-content-item-ios':_globalServ?.iosDivice}">
+    <span (click)="goBack()" class="btn-back-item fas fa-chevron-left"></span>
+  </div>
+  <div>
+    <img *ngIf="getItem?.image && isValidGroupImage" class="main-item-image" src="{{getItem?.image}}" (error)="updateGroupUrl($event)">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+
+        <div class="item-title">
+          <h2>
+            <span>{{getItem?.title}}</span>
+          </h2>
+        </div>
+        <div class="box-center-full">
+          <div *ngIf="isJoined" class="box-blue-circle" (click)="joinGroup()">
+            <img src="../../../assets/img/fab_checked.png"/>
+            <p class="secondary-text" style="color: #179ed5; margin-top: 5px">{{'group-detail.joined' | translate}}</p>
+          </div>
+          <div *ngIf="!isJoined" class="box-blue-circle" (click)="joinGroup()">
+            <img src="../../../assets/img/fab.png"/>
+            <p class="secondary-text" style="color: #179ed5; margin-top: 5px">{{'group-detail.join' | translate}}</p>
+          </div>
+          <div class="box-blue-circle" (click)="goToCreatePlan()">
+            <img src="../../../assets/img/fab_calendar.png"/>
+            <p class="secondary-text" style="color: #179ed5; margin-top: 5px">{{'group-detail.createPlan' | translate}}</p>
+          </div>
+        </div>
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="information-circle"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'group-detail.details' | translate }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="secondary-text">
+              <span *ngIf="_globalServ?.language == 'en'">{{getItem?.description}}</span>
+              <span *ngIf="_globalServ?.language == 'es'">{{getItem?.description}}</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="blue-text size-18-pt">{{ 'group-detail.readMore' | translate }}</td>
+            </tr>
+          </table>
+          <table style="width: 100%;">
+            <tr class="weight-600">
+              <td class="member-h-icon">
+                <ion-icon class="icon-item" name="ios-person"></ion-icon>
+              </td>
+              <td class="title-item">
+                <span>{{ 'group-detail.members' | translate }}: {{groupMembers.length}}</span>
+                <span class="invite-member" (click)="goToMembers()">Invite</span>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <span *ngFor="let member of groupMembers; let i = index">
+                  <img *ngIf="i < math.round((innerWidth - 70 - 2*37) / 37)" class="members-avatar" src="{{member?.image}}" />
+                </span>
+                <span *ngIf="groupMembers.length > math.round((innerWidth - 70 - 2*37) / 37)" class="more-member" (click)="goToMembers()">
+                  +{{groupMembers.length - math.round((innerWidth - 70 - 2*37) / 37)}}
+                </span>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr class="weight-600">
+              <td>
+                <ion-icon class="icon-item" name="text"></ion-icon>
+              </td>
+              <td class="title-item">{{ 'group-detail.comments' | translate }}</td>
+            </tr>
+            <tbody>
+              <tr *ngFor="let comment of comments; let i = index">
+                <td width="5%"></td>
+                <td class="comment-body">
+                  <img class="comment-avatar" src="{{comment.fk_user_image}}" />  
+                  <div>
+                    <span class="comment-name">{{comment.fk_user_first_name}} {{comment.fk_user_last_name}}</span>
+                    <span class="comment-text">{{comment.comment}}</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="secondary-text">{{comment.duration}}</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="add-comment-section">
+            <span class="add-comment" (click)="writeComment()">{{ 'group-detail.addAComment' | translate }}</span>
+          </div>
+
+          <table>
+            <tr class="weight-600">
+              <td>
+                <ion-icon class="icon-item" name="pin"></ion-icon>
+              </td>
+              <td class="title-item">{{ 'group-detail.plans' | translate }}</td>
+            </tr>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <ion-slides *ngIf="plans.length !== 0" style="width: 100%;" [pager]="true">
+            <ion-slide style="width: 100%;" *ngFor="let plan of plans;">
+              <plan-card [dataPlan]="plan" style="width: 100%;" (click)="goToGroupPlanItem(plan)"></plan-card>
+            </ion-slide>
+          </ion-slides>
+
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </ion-content>

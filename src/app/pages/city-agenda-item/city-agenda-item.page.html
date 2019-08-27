@@ -1,0 +1,160 @@
+<ion-content>
+  <div class="btn-back-content-item" [ngClass]="{'btn-back-content-item-ios':_globalServ?.iosDivice}">
+    <span (click)="goBack()" class="btn-back-item fas fa-chevron-left"></span>
+  </div>
+  <div>
+    <img class="main-item-image" src="{{url}}/get-image/{{getItem?.event?.image}}">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+
+        <div class="item-title">
+          <h2>
+            <span *ngIf="_globalServ?.language == 'en'">{{getItem?.event?.name_EN}}</span>
+            <span *ngIf="_globalServ?.language == 'es'">{{getItem?.event?.name_ES}}</span>
+          </h2>
+        </div>
+        <div class="box-center-full">
+          <div class="box-blue-circle" (click)="goToCreatePlan()">
+            <span class="blue-circle icon-blue far fa-calendar"></span>
+            <div class="blue-text">{{ 'city-agenda-item.createPlan' | translate }}</div>
+          </div>
+        </div>
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="information-circle"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'city-agenda-item.details' | translate }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="secondary-text">
+              <span *ngIf="_globalServ?.language == 'en' && (truncating && getItem?.event?.description_EN.length > limit)">{{getItem?.event?.description_EN | truncate : limit}}</span>
+              <span *ngIf="_globalServ?.language == 'es' && (truncating && getItem?.event?.description_ES.length > limit)">{{getItem?.event?.description_ES | truncate : limit}}</span>
+
+              <span *ngIf="_globalServ?.language == 'en' && (!truncating && getItem?.event?.description_EN.length > limit)">{{getItem?.event?.description_EN}}</span>
+              <span *ngIf="_globalServ?.language == 'es' && (!truncating && getItem?.event?.description_ES.length > limit)">{{getItem?.event?.description_ES}}</span></td>
+          </tr>
+          <tr *ngIf="truncating">
+            <td></td>
+            <td class="blue-text size-18-pt" (click)="truncating = false">{{ 'city-agenda-item.readMore' | translate }}</td>
+          </tr>
+        </table>
+
+
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="clock"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'city-agenda-item.dateAndTime' | translate }}</td>
+          </tr>
+          <tbody *ngFor="let item of getItem?.event?.Places">
+            <tr class="secondary-text weight-600">
+              <td></td>
+              <td *ngIf="_globalServ?.language == 'en'">{{item?.hours_EN}} <span
+                  *ngIf="item?.hours_EN != ''">({{item?.name_EN}})</span></td>
+              <td *ngIf="_globalServ?.language == 'es'">{{item?.hours_ES}} <span
+                  *ngIf="item?.hours_ES != ''">({{item?.name_ES}})</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <ion-chip class="btn-blue-general">
+                  <!--<ion-label>{{ 'city-agenda-item.addToCalendar' | translate }}</ion-label>-->
+                  <ion-label *ngIf="!AddedToCalender" (click)="AddToCalender(getItem)">{{ 'city-agenda-item.addToCalendar' | translate }}</ion-label>
+				          <ion-label *ngIf="AddedToCalender" >{{ 'city-agenda-item.addedToCalendar' | translate }}</ion-label>
+                </ion-chip>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="pin"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'city-agenda-item.location' | translate }}</td>
+          </tr>
+          <tbody *ngFor="let item of getItem?.event?.Places">
+            <tr class="secondary-text">
+              <td></td>
+              <td *ngIf="_globalServ?.language == 'en'">{{item?.name_EN}}</td>
+              <td *ngIf="_globalServ?.language == 'es'">{{item?.name_ES}}</td>
+            </tr>
+            <tr>
+            <tr class="secondary-text">
+              <td></td>
+              <td>{{item?.street}} {{item?.number}}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <ion-chip class="btn-blue-general" (click)="goToSite()">
+                  <ion-label>{{ 'city-agenda-item.website' | translate }}</ion-label>
+                </ion-chip>
+                <ion-chip class="btn-blue-general">
+                  <ion-label>{{ 'city-agenda-item.directions' | translate }}</ion-label>
+                </ion-chip>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+
+        <div class="box-map-one">
+          <div id="map" class="map-one" #map></div>
+        </div>
+        <table>
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="ios-pricetag"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'city-agenda-item.price' | translate }}</td>
+          </tr>
+          <tr *ngFor="let item of getItem?.event?.Places" class="secondary-text">
+            <td></td>
+            <td *ngIf="_globalServ?.language == 'en'">{{item.price_EN | currency:'EUR':true:'1.2-2'}} <span
+              *ngIf="item?.price_EN != ''">({{item?.name_EN }})</span></td>
+            <td *ngIf="_globalServ?.language == 'es'">{{item.price_ES | currency:'EUR':true:'1.2-2'}} <span
+              *ngIf="item?.price_ES != ''">({{item?.name_ES}})</span></td>
+          </tr>
+          <tr>
+        </table>
+
+        <table class="margin-last-table">
+          <tr class="weight-600">
+            <td>
+              <ion-icon class="icon-item" name="ios-share"></ion-icon>
+            </td>
+            <td class="title-item">{{ 'city-agenda-item.share' | translate }}</td>
+          </tr>
+          <tr class="secondary-text">
+            <td></td>
+            <td>
+              <ion-chip class="btn-facebook">
+                <ion-label>Facebook</ion-label>
+              </ion-chip>
+              <ion-chip class="btn-twitter">
+                <ion-label>Twitter</ion-label>
+              </ion-chip>
+              <ion-chip class="btn-email">
+                <ion-label>Email</ion-label>
+              </ion-chip>
+              <ion-chip class="btn-whatsapp">
+                <ion-label>WhatsApp</ion-label>
+              </ion-chip>
+            </td>
+          </tr>
+          <tr>
+        </table>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

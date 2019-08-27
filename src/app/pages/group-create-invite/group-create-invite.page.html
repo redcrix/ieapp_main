@@ -1,0 +1,24 @@
+<ion-content>
+  <toolbar
+    [title]="'group-create-invite.invite' | translate"
+    [back]="true"
+    [searchMembers]="true"
+    (memberKeyChange)="memberKeyChange($event)"
+  >
+  </toolbar>
+  <div class="container invite-screen">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="invite" *ngFor="let person of groupPeoples | filter:keyword; let i=index">
+          <img class="invite-avatar" src="{{person.image}}" />
+          <ion-item (click)="changeStatus(i)">
+            <ion-label>{{person?.name}}</ion-label>
+            <ion-checkbox [checked]="person?.value === 1" slot="end"></ion-checkbox>
+          </ion-item>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</ion-content>

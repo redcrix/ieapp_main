@@ -1,0 +1,95 @@
+.column-left-title-cropp {
+    text-align: left;
+    padding-top: 25px;
+    //padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    font-size:16pt;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .column-center-title-cropp {
+    text-align: center;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 25px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    color: white;
+    font-size:18pt;
+    //line-height: 21pt;
+  }
+
+  .column-right-title-cropp {
+    text-align: right;
+    padding-top: 25px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    //padding-left: 15px;
+    font-size:16pt;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  ion-toolbar{
+      height: 75px;
+      position: fixed;
+      --background: black;
+  }
+
+
+  .separator{
+      margin-top: 75px;
+  }
+
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+
+  *{
+    --background: black;
+  }
+
+  .btns-box{
+      margin-top: 25px;
+  }
+
+  .outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .icon-upload{
+    color: white;
+    font-size: 30px;
+  }
+
+  .icon-cut{
+    color: white;
+    margin-left: 45px;
+    font-size: 30px;
+  }
